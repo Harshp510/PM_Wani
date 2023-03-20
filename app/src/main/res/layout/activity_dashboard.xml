@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/wifi_disable_layout"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="16dp"
+            android:text="Your wifi setting is disabled. Please enable wifi"
+            android:textColor="@color/black_opaque_70"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_goto_wifisettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/qam_button_back_wifi_connect"
+            android:text="Wi-Fi Settings"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="normal" />
+    </LinearLayout>
+</RelativeLayout>
+    <TextView
+        android:id="@+id/txt_error_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:alpha="0.7"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:text="Note:If you want to show wifi network detail then enable location and wifi sevice in setting menu in your device."
+        android:textColor="@color/wifired"
+        android:visibility="visible"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

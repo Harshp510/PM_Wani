@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        app:contentInsetLeft="0.0dip"
+        app:contentInsetStart="0.0dip"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_scrollFlags="enterAlways|scroll"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+       >
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_gravity="start|center"
+                android:id="@+id/ivActionBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/outline_chevron_left_white_24"
+                style="@style/Widget.AppCompat.ActionButton"
+                app:tint="@color/mainblack" />
+
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+       android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="35dp"
+                android:text="@string/Glad_to_see"
+                android:textStyle="bold"
+                android:textColor="@color/maingreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+
+                android:textSize="35dp"
+                android:text="@string/you_again"
+                android:textStyle="bold"
+                android:textColor="@color/maingreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/edittext_outer_border"
+            android:id="@+id/layout_mobilenumber"
+            android:padding="10dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_textSize="13sp"
+                app:ccp_padding="5dp"
+                app:ccpDialog_textColor="?android:textColorPrimary"
+                android:layout_gravity="center_vertical"
+                />
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#20343434"
+                />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+
+                android:imeOptions="actionNext"
+                android:hint="@string/phone_number"
+                android:textColor="@color/black_opaque_70"
+                android:textColorHint="#40343434"
+                android:id="@+id/edt_Contact"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:textSize="14dp"
+            android:text="@string/mobile_number_error_message"
+            android:textStyle="normal"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/error_message_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_gravity="center_vertical"
+                android:background="#20343434"/>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/or"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+
+                android:textColor="@color/mainblack"
+                />
+            <View
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#20343434"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_username"
+            android:background="@drawable/edittext_outer_border"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.maksim88.passwordedittext.PasswordEditText
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+
+                android:imeOptions="actionNext"
+                android:hint="@string/password"
+                android:textColorHint="#40343434"
+                android:id="@+id/edt_username"
+                android:inputType="text"
+                android:textColor="@color/black_opaque_70"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:textSize="14dp"
+            android:text="@string/mobile_number_error_message"
+            android:textStyle="normal"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/error_message_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:text="Forgot Password"
+            android:gravity="end"
+            android:textStyle="normal"
+            android:textColor="@color/maingreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/proceed_text"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textAllCaps="false"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_login"
+                android:layout_alignParentBottom="true"
+                android:textSize="16dp"
+                app:cornerRadius="32dp"
+                app:elevation="0dp"
+                app:backgroundTint="@color/maingreen"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="16dp"
+                    android:text="@string/not_yet_register"
+                    android:textStyle="normal"
+                    android:visibility="visible"
+
+                    android:textColor="@color/mainblack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txt_sign_up"
+                    android:textSize="16dp"
+                    android:text="@string/sign_up"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/yellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

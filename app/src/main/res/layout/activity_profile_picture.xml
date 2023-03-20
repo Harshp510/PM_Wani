@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        app:contentInsetLeft="0.0dip"
+        app:contentInsetStart="0.0dip"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_scrollFlags="enterAlways|scroll"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        >
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_gravity="start|center"
+                android:id="@+id/ivActionBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/outline_chevron_left_white_24"
+                style="@style/Widget.AppCompat.ActionButton"
+                app:tint="@color/mainblack" />
+
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="35dp"
+                android:text="@string/add_your"
+                android:textStyle="bold"
+                android:textColor="@color/maingreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+
+                android:textSize="35dp"
+                android:text="@string/profile_picture"
+                android:textStyle="bold"
+                android:textColor="@color/maingreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            app:cardCornerRadius="250dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/card_round"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/maingreen">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HP"
+                android:textSize="70dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:drawablePadding="10dp"
+            android:text="Upload Image"
+            android:gravity="center"
+            android:textSize="18dp"
+
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_cloud_upload" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:drawablePadding="10dp"
+            android:text="Change Background"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:id="@+id/txt_change_background"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_color_lens" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:padding="15dp"
+
+            android:id="@+id/btn_submit"
+            android:layout_alignParentBottom="true"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            app:cornerRadius="32dp"
+            app:elevation="0dp"
+            app:backgroundTint="@color/maingreen"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

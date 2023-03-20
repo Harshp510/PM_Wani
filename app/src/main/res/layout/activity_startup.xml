@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Startup_Activity">
+
+    <FrameLayout
+        android:id="@+id/place_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_banner" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradiant_custome">
+
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/laout_text"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+            <TextView
+                android:textSize="30dp"
+                android:text="Start Using WIFI"
+                android:textStyle="bold"
+                android:textColor="@color/mainblack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+
+                android:textSize="30sp"
+                android:text="With Us"
+                android:textStyle="bold"
+                android:textColor="@color/mainblack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/mainblack"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textAllCaps="false"
+                android:padding="15dp"
+                android:textColor="@color/white"
+                android:id="@+id/btn_login_phone"
+                android:layout_alignParentBottom="true"
+                android:textSize="16dp"
+                app:cornerRadius="32dp"
+                app:elevation="0dp"
+                app:backgroundTint="@color/maingreen"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_text"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textAllCaps="false"
+                android:padding="15dp"
+                android:id="@+id/btn_register"
+                android:textColor="@color/mainblack"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:textSize="16dp"
+                app:cornerRadius="32dp"
+                app:elevation="0dp"
+                app:backgroundTint="@color/yellow"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

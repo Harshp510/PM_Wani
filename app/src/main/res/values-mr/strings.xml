@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PM-WANI</string>
+
+    <string name="english">अंग्रेज़ी</string>
+    <string name="hello">नमस्कार</string>
+    <string name="login_text">फोनद्वारे लॉगिन करा</string>
+    <string name="register_text">नवीन खात्याची नोंदणी करा</string>
+    <string name="dark" translatable="false">Dark</string>
+    <string name="light" translatable="false">Light</string>
+
+    <string name="proceed_text">पुढे जा</string>
+    <string name="Glad_to_see">पाहून आनंद झाला</string>
+    <string name="you_again">आपण पुन्हा !</string>
+
+    <string name="phone_number">फोन नंबर</string>
+    <string name="or">किंवा</string>
+    <string name="Username">वापरकर्तानाव</string>
+
+    <string name="not_yet_register">अद्याप नोंदणी नाही?</string>
+    <string name="sign_up">साइन अप करां</string>
+    <string name="hint_fname">पहिले नाव</string>
+    <string name="hint_lname">आडनाव</string>
+    <string name="hint_email">ईमेल पत्ता</string>
+    <string name="already_registered">आधीच नोंदणी झाली आहे?</string>
+    <string name="sign_in">साइन इन करा</string>
+</resources>

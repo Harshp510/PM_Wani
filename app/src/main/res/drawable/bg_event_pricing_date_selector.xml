@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- disabled -->
+    <item android:drawable="@drawable/bg_event_pricing_date_disabled" android:state_enabled="false" />
+    <!-- selected -->
+    <item android:drawable="@drawable/bg_event_pricing_date_hover" android:state_enabled="true" android:state_selected="true" />
+    <!-- pressed -->
+    <item android:drawable="@drawable/bg_event_pricing_date_hover" android:state_enabled="true" android:state_pressed="true" />
+    <!-- focused -->
+    <item android:drawable="@drawable/bg_event_pricing_date_hover" android:state_enabled="true" android:state_focused="true" />
+    <!-- default -->
+    <item android:drawable="@drawable/bg_event_pricing_date_normal" android:state_enabled="true" android:state_selected="false" />
+    <item android:drawable="@drawable/bg_event_pricing_date_normal" android:state_enabled="true" />
+
+</selector>

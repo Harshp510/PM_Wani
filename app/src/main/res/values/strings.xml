@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">PM-WANI</string>
+    <string name="main_activity_title">[EN] This title is in English</string>
+    <string name="main_activity_desc">This is the description text in English.</string>
+    <string name="main_activity_about">This is about text in English.</string>
+    <string name="main_activity_to_tr_button">Turkish</string>
+    <string name="main_activity_to_en_button">English</string>
+    <string name="english">English</string>
+    <string name="hello">Hello</string>
+    <string name="main_activity_toolbar_title">Title in English</string>
+    <string name="second_activity_title">[EN] Second activity in English</string>
+    <string name="second_activity_desc">Second description text is in English.</string>
+    <string name="main_activity_to_cn_button">Chinese</string>
+    <string name="main_second_activity">Second page ></string>
+    <string name="back_button"><![CDATA[< Go back]]></string>
+    <string name="main_activity_to_ur_button">Urdu</string>
+    <string name="dark" translatable="false">Dark</string>
+    <string name="light" translatable="false">Light</string>
+
+    <string name="login_text">Login With Phone</string>
+    <string name="register_text">Register New Account</string>
+    <string name="proceed_text">Proceed</string>
+    <string name="Glad_to_see">Glad to see</string>
+    <string name="you_again">you again !</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="or">OR</string>
+    <string name="Username">Username</string>
+    <string name="password">Password</string>
+    <string name="mobile_number_error_message">Invalid Mobile Number</string>
+    <string name="username_error_message">Invalid Username</string>
+    <string name="not_yet_register">Not Register Yet?</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="sign_up_and">Sign Up And</string>
+    <string name="start_using_wifi">Start Using WIFI</string>
+
+    <string name="hint_fname">First Name</string>
+    <string name="hint_lname">Last name</string>
+    <string name="hint_email">Email Address</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="sign_in">Sign In</string>
+
+    <string name="resend_code_in">Resend Code In</string>
+    <string name="verify">Verify</string>
+    <string name="submit">Submit</string>
+    <string name="setup_your">Setup Your</string>
+    <string name="fa_pin">2FA PIN</string>
+    <string name="enter_pin">Enter Your PIN</string>
+    <string name="reenter_pin">Re-Enter Your PIN</string>
+    <string name="add_your">Add Your</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="save">Save</string>
+    <string name="apply">Apply</string>
+    <string name="voucher_code">Voucher Code</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

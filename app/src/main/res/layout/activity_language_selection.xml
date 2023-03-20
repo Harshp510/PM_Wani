@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LanguageSelection_Activity">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/laout_text"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="30dp"
+            android:text="Choose Your"
+            android:textColor="@color/black_opaque_80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+
+            android:textSize="30sp"
+            android:text="Language"
+            android:textStyle="bold"
+            android:textColor="@color/maingreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black_opaque_60"
+            android:text="Please Selct Your Language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idCourseRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_next"
+        android:layout_below="@+id/laout_text"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:nestedScrollingEnabled="false" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textAllCaps="false"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="18dp"
+        app:cornerRadius="32dp"
+        android:id="@+id/btn_next"
+        app:backgroundTint="@color/maingreen"
+        />
+
+</RelativeLayout>
