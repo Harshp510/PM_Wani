@@ -89,6 +89,14 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PMWANI.NoActionBar" />
+
+        <receiver
+            android:name=".MySMSBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

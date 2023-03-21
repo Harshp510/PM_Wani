@@ -3,6 +3,7 @@ package com.zenwsmp.pmwani;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -43,6 +44,7 @@ public class RegistrationActivity extends AppCompatActivity {
     ImageView ivActionBack;
     EditText edt_contact,edt_fname,edt_lname,edt_email;
     CountryCodePicker ccp;
+    TextView txt_mobile_error,txt_fname_error,txt_lname_error,txt_email_error;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,10 @@ public class RegistrationActivity extends AppCompatActivity {
         edt_email=findViewById(R.id.edt_email);
         edt_lname=findViewById(R.id.edt_lname);
         ccp=findViewById(R.id.ccp);
+        txt_mobile_error=findViewById(R.id.txt_mobile_error);
+        txt_fname_error=findViewById(R.id.txt_fname_error);
+        txt_lname_error=findViewById(R.id.txt_lname_error);
+        txt_email_error=findViewById(R.id.txt_email_error);
         //ccp.setDefaultCountryUsingNameCode("+1");
         btn_register.setOnClickListener(v -> {
            /* Intent i = new Intent(RegistrationActivity.this,LoginActivity.class);
@@ -63,11 +69,11 @@ public class RegistrationActivity extends AppCompatActivity {
             if(new connectionDector(this).isConnectingToInternet())
             {
                 if(validate()){
-                   // Call_register();
-                    Intent i = new Intent(RegistrationActivity.this,OTP_Activity.class);
+                   Call_register();
+                   /* Intent i = new Intent(RegistrationActivity.this,OTP_Activity.class);
                     i.putExtra("phone",edt_contact.getText().toString());
                     i.putExtra("cpp_code",ccp.getSelectedCountryCodeWithPlus());
-                    startActivity(i);
+                    startActivity(i);*/
                 }
             }else{
                 new ConfigAPI().ShowToastMessage(this,"No Internet Connection");
@@ -91,13 +97,15 @@ public class RegistrationActivity extends AppCompatActivity {
             object1.put("mobile",edt_contact.getText().toString());
             object1.put("full_name",edt_fname.getText().toString()+" "+edt_lname.getText().toString());
             object1.put("email",edt_email.getText().toString());
-            object1.put("per_page","0");
+            object1.put("country_code",ccp.getSelectedCountryCodeWithPlus());
+            object1.put("hash_code",getHashCode(RegistrationActivity.this));
             Log.d("param",object1.toString());
             Register(object1);
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+
     private void Register(JSONObject jsonObject) throws UnsupportedEncodingException {
 
         Dialog dialog = new Dialog(RegistrationActivity.this);
@@ -121,7 +129,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Log.d("url",url);
         //client.addHeader("Authorization","Bearer "+preferences.getString("accesstoken",null));
         client.setTimeout(20*1000);
-        client.get(RegistrationActivity.this,url,entity,"application/json",new JsonHttpResponseHandler()
+        client.post(RegistrationActivity.this,url,entity,"application/json",new JsonHttpResponseHandler()
         {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -193,35 +201,43 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         if (fname.isEmpty()) {
-            edt_fname.setError("This field is required.");
+            txt_fname_error.setText("Firstname is required.");
+            txt_fname_error.setVisibility(View.VISIBLE);
             valid = false;
         } else {
-            edt_fname.setError(null);
+            txt_fname_error.setText("");
+            txt_fname_error.setVisibility(View.GONE);
         }
 
 
         if (lname.isEmpty()) {
-            edt_lname.setError("This field is required.");
+            txt_lname_error.setText("Lastname is required.");
+            txt_lname_error.setVisibility(View.VISIBLE);
             valid = false;
         } else {
-            edt_lname.setError(null);
+            txt_lname_error.setText("");
+            txt_lname_error.setVisibility(View.GONE);
         }
         if (!email.isEmpty()) {
-            if(isValidEmail(email)){
-                edt_lname.setError("Invalid Email Address.");
+            if(!isValidEmail(email)){
+                txt_email_error.setText("Invalid Email Address.");
+                txt_email_error.setVisibility(View.VISIBLE);
                 valid = false;
             }
 
         } else {
-            edt_lname.setError(null);
+            txt_email_error.setText("");
+            txt_email_error.setVisibility(View.GONE);
         }
 
         String phone=edt_contact.getText().toString();
         if(!phone.matches(regexStr)){
-            edt_contact.setError("Invalid Mobile Number.");
+            txt_mobile_error.setText("Invalid Mobile Number.");
+            txt_mobile_error.setVisibility(View.VISIBLE);
             valid = false;
         } else {
-            edt_contact.setError(null);
+            txt_mobile_error.setText("");
+            txt_mobile_error.setVisibility(View.GONE);
         }
 
 
@@ -230,5 +246,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public static boolean isValidEmail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+    public static String getHashCode(Context context){
+        AppSignatureHelper appSignature = new AppSignatureHelper(context);
+        Log.e(" getAppSignatures ",""+appSignature.getAppSignatures());
+        return appSignature.getAppSignatures().get(0);
+
     }
 }
