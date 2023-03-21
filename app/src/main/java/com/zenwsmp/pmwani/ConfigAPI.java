@@ -18,6 +18,7 @@ public class ConfigAPI {
     // public static final String MAIN_URL="https://developer.qntmnet.com/webservice/";
     public static final String Developer="de^el0per";
     public static final String flag_checkssid="SSIDCheck";
+    public static final String flag_checkssid_data="SSIDCheck";
     public static final String flag_val_checkssid="0";
     //  flag=SSIDCheck&flag_val=0
 
