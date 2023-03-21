@@ -30,7 +30,8 @@ public class Startup_Activity extends AppCompatActivity {
 
         btn_register.setOnClickListener(v -> {
 
-            Intent i = new Intent(Startup_Activity.this,RegistrationActivity.class);
+            //Intent i = new Intent(Startup_Activity.this,RegistrationActivity.class);
+            Intent i = new Intent(Startup_Activity.this,Change_Password_Activity.class);
             startActivity(i);
         });
     }

@@ -14,11 +14,10 @@ public class ConfigAPI {
     // contact us at http://help.microblink.com
     // public static final String LICENSE_KEY = "MSHLU4AX-CBMEPGOI-RN7IJWQZ-UEOLNT4Y-GD4K5X42-OJL66HTK-CYGA2P3E-O4CIHSF2";
     public static final String LICENSE_KEY = "75IYFNSG-ZYFURZAG-A6CX6OWR-IJ63EFRE-FDJK76ZO-GDF33L73-FYYMWHLM-RPBDJTOI";
-    public static  String MAIN_URL= "http://192.168.7.43/api/v1/";
+    public static  String MAIN_URL= "http://192.168.7.43:8080/api/v1/";
     // public static final String MAIN_URL="https://developer.qntmnet.com/webservice/";
     public static final String Developer="de^el0per";
     public static final String flag_checkssid="SSIDCheck";
-    public static final String flag_checkssid_data="SSIDCheck";
     public static final String flag_val_checkssid="0";
     //  flag=SSIDCheck&flag_val=0
 

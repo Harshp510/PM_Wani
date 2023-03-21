@@ -16,12 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PMWANI">
         <activity
+            android:name=".Change_Password_Activity"
+            android:exported="false" />
+        <activity
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".EditPersonalDetail_Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.PMWANI.NoActionBar"></activity>
+            android:theme="@style/Theme.PMWANI.NoActionBar" />
         <activity
             android:name=".AddVoucherCode_Activity"
             android:screenOrientation="portrait"
@@ -29,7 +32,7 @@
         <activity
             android:name=".MainScreen_Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.PMWANI.NoActionBar"></activity>
+            android:theme="@style/Theme.PMWANI.NoActionBar" />
         <activity
             android:name=".Account_Activity"
             android:screenOrientation="portrait"
