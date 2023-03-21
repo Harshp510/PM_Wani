@@ -4,6 +4,15 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
+
+    signingConfigs {
+        config {
+            keyAlias 'zen'
+            keyPassword 'zen@123'
+            storeFile file('D:/Project/apkfile/PM-Wani/pm_wani.jsk')
+            storePassword 'zen@123'
+        }
+    }
     compileSdkVersion 32
 
     defaultConfig {
