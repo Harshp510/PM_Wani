@@ -39,263 +39,273 @@
 
         </FrameLayout>
     </androidx.appcompat.widget.Toolbar>
+
     <ScrollView
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-             <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
 
-        android:padding="10dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:padding="10dp">
 
-            <TextView
-                android:textSize="35dp"
-                android:text="@string/sign_up_and"
-                android:textStyle="bold"
-                android:textColor="@color/maingreen"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-
-                android:textSize="35dp"
-                android:text="@string/start_using_wifi"
-                android:textStyle="bold"
-                android:textColor="@color/maingreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-        <LinearLayout
-
-            android:background="@drawable/edittext_outer_border"
-            android:weightSum="1"
-            android:padding="10dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:textSize="16sp"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-
-                android:imeOptions="actionNext"
-                android:hint="@string/hint_fname"
-                android:textColorHint="#40343434"
-                android:textColor="@color/black_opaque_70"
-                android:inputType="text"
-                android:layout_weight="0.8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:layout_weight="0.2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/name"
-                />
-        </LinearLayout>
-        <TextView
-            android:textSize="14dp"
-            android:text="@string/mobile_number_error_message"
-            android:textStyle="normal"
-            android:visibility="gone"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/error_message_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <LinearLayout
-
-            android:background="@drawable/edittext_outer_border"
-            android:weightSum="1"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:textSize="16sp"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-
-                android:imeOptions="actionNext"
-                android:hint="@string/hint_lname"
-                android:textColorHint="#40343434"
-                android:textColor="@color/black_opaque_70"
-                android:inputType="text"
-                android:layout_weight="0.8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:layout_weight="0.2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/name"
-                />
-        </LinearLayout>
-        <TextView
-            android:textSize="14dp"
-            android:text="@string/mobile_number_error_message"
-            android:textStyle="normal"
-            android:visibility="gone"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/error_message_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <LinearLayout
-
-            android:background="@drawable/edittext_outer_border"
-            android:weightSum="1"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:textSize="16sp"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-
-                android:imeOptions="actionNext"
-                android:hint="@string/hint_email"
-                android:textColorHint="#40343434"
-                android:textColor="@color/black_opaque_70"
-                android:inputType="text"
-                android:layout_weight="0.8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:layout_weight="0.2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/email"
-                />
-        </LinearLayout>
-        <TextView
-            android:textSize="14dp"
-            android:text="@string/mobile_number_error_message"
-            android:textStyle="normal"
-            android:visibility="gone"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/error_message_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <LinearLayout
-            android:background="@drawable/edittext_outer_border"
-            android:id="@+id/layout_mobilenumber"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/ccp"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:ccp_textSize="13sp"
-                app:ccp_padding="5dp"
-                app:ccpDialog_textColor="?android:textColorPrimary"
-                android:layout_gravity="center_vertical"
-                />
-            <View
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#20343434"
-                />
-            <androidx.appcompat.widget.AppCompatEditText
-                android:textSize="16sp"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-                android:textColor="@color/black_opaque_70"
-                android:imeOptions="actionNext"
-                android:hint="@string/phone_number"
-                android:textColorHint="#40343434"
-                android:id="@+id/edt_Contact"
-                android:inputType="number"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_and"
+                    android:textColor="@color/maingreen"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_using_wifi"
+                    android:textColor="@color/maingreen"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_outer_border"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_fname"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@color/black_opaque_70"
+                    android:textColorHint="#40343434"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/name" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/mobile_number_error_message"
+                android:textColor="@color/error_message_color"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outer_border"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_lname"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@color/black_opaque_70"
+                    android:textColorHint="#40343434"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/name" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/mobile_number_error_message"
+                android:textColor="@color/error_message_color"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outer_border"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@color/black_opaque_70"
+                    android:textColorHint="#40343434"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/email" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/mobile_number_error_message"
+                android:textColor="@color/error_message_color"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/layout_mobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_outer_border"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:ccpDialog_textColor="?android:textColorPrimary"
+                    app:ccp_padding="5dp"
+                    app:ccp_textSize="13sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#20343434" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@android:color/transparent"
+                    android:hint="@string/phone_number"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="@color/black_opaque_70"
+                    android:textColorHint="#40343434"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="@string/mobile_number_error_message"
+                android:textColor="@color/error_message_color"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="15dp"
+                    android:text="@string/proceed_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    app:backgroundTint="@color/maingreen"
+                    app:cornerRadius="32dp"
+                    app:elevation="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/already_registered"
+                        android:textColor="@color/mainblack"
+
+                        android:textSize="16dp"
+                        android:textStyle="normal"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/txt_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/sign_in"
+                        android:textColor="@color/yellow"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
-        <TextView
-            android:textSize="14dp"
-            android:text="@string/mobile_number_error_message"
-            android:textStyle="normal"
-            android:visibility="gone"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/error_message_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-                 <LinearLayout
-                     android:orientation="vertical"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content">
-
-                     <com.google.android.material.button.MaterialButton
-                         android:layout_marginTop="15dp"
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:text="@string/proceed_text"
-                         android:layout_marginRight="20dp"
-                         android:layout_marginLeft="20dp"
-                         android:textAllCaps="false"
-                         android:padding="15dp"
-                         android:textColor="@color/white"
-                         android:id="@+id/btn_register"
-                         android:layout_alignParentBottom="true"
-                         android:textSize="16dp"
-                         app:cornerRadius="32dp"
-                         app:elevation="0dp"
-                         app:backgroundTint="@color/maingreen"
-                         />
-
-                     <LinearLayout
-                         android:layout_marginTop="10dp"
-                         android:gravity="center"
-                         android:orientation="horizontal"
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content">
-
-                         <TextView
-                             android:layout_width="wrap_content"
-                             android:layout_height="match_parent"
-                             android:text="@string/already_registered"
-                             android:textColor="@color/mainblack"
-
-                             android:textSize="16dp"
-                             android:textStyle="normal"
-                             android:visibility="visible" />
-                         <TextView
-                             android:id="@+id/txt_sign_up"
-                             android:textSize="16dp"
-                             android:text="@string/sign_in"
-                             android:textStyle="bold"
-                             android:visibility="visible"
-                             android:layout_marginStart="5dp"
-                             android:textColor="@color/yellow"
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"/>
-
-                     </LinearLayout>
-
-                 </LinearLayout>
-
-    </LinearLayout>
     </ScrollView>
 </RelativeLayout>

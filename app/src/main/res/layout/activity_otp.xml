@@ -67,6 +67,7 @@
                 android:layout_height="wrap_content"/>
 
                 <TextView
+                 android:id="@+id/txt_otp_label"
                 android:textSize="16sp"
                 android:textColor="@color/black_opaque_70"
                 android:text="We sent Code to Phone +91 9876543210"
@@ -81,27 +82,31 @@
             android:layout_height="wrap_content">
 
             <com.chaos.view.PinView
-                android:layout_marginTop="10dp"
-                android:id="@+id/firstPinView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="5dp"
-                android:inputType="number"
-                android:textColor="@color/mainblack"
-                app:itemRadius="@dimen/pv_pin_view_item_radius"
-                app:itemSpacing="15dp"
-                app:hideLineWhenFilled="true"
-                app:lineWidth="0dp"
-                app:itemHeight="90dp"
-                app:itemWidth="68dp"
 
-                app:lineColor="@color/event_pricing_date_chooser_bg_normal"
+                android:layout_centerVertical="true"
+                android:id="@+id/firstPinView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:itemBackground="@drawable/bg_event_pricing_date_normal"/>
+                android:inputType="number"
+                android:itemBackground="@drawable/bg_event_pricing_date_normal"
+                android:textColor="@color/mainblack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:itemCount="6"
+                app:hideLineWhenFilled="true"
+                app:itemHeight="60dp"
+                app:itemRadius="@dimen/pv_pin_view_item_radius"
+                app:itemSpacing="10dp"
+                app:itemWidth="40dp"
+                app:lineColor="@color/event_pricing_date_chooser_bg_normal"
+                app:lineWidth="0dp" />
                 <requestFocus/>
         </RelativeLayout>
 

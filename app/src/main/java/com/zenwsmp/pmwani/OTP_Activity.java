@@ -27,7 +27,9 @@ public class OTP_Activity extends AppCompatActivity {
     DecimalFormat formater = new DecimalFormat("00");
     CountDownTimer timer;
     MaterialButton btn_verify;
-    TextView txt_resend_code;
+    TextView txt_resend_code,txt_otp_label;
+    String phone,cpp_code;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,11 @@ public class OTP_Activity extends AppCompatActivity {
         txt_timer= findViewById(R.id.txt_timer);
         btn_verify= findViewById(R.id.btn_verify);
         txt_resend_code= findViewById(R.id.txt_resend_code);
+        txt_otp_label= findViewById(R.id.txt_otp_label);
         //startSmartUserConsent();
-
+        phone=getIntent().getStringExtra("phone");
+        cpp_code=getIntent().getStringExtra("cpp_code");
+        txt_otp_label.setText("We sent Code to Phone "+cpp_code+" "+phone);
         timer = new CountDownTimer(45000, 1000) {
 
             public void onTick(long millisUntilFinished) {

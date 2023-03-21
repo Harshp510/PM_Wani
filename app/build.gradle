@@ -57,6 +57,9 @@ dependencies {
     implementation 'com.maksim88:PasswordEditText:v0.9'
     implementation 'com.google.android.gms:play-services-auth:20.4.1'
     implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    implementation files('libs/android-async-http-1.4.9.jar')
+    implementation files('libs/httpclient-4.4.1.1.jar')
 }
 repositories {
     mavenCentral()
