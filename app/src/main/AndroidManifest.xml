@@ -16,9 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PMWANI">
         <activity
-            android:name=".ForgotPassword_Activity"
-            android:exported="false" />
-        <activity
             android:name=".Change_Password_Activity"
             android:exported="false" />
         <activity

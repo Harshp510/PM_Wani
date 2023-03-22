@@ -146,6 +146,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         Intent i = new Intent(RegistrationActivity.this,OTP_Activity.class);
                         i.putExtra("phone",edt_contact.getText().toString());
                         i.putExtra("cpp_code",ccp.getSelectedCountryCode());
+                        i.putExtra("isregister",true);
                         startActivity(i);
 
 
