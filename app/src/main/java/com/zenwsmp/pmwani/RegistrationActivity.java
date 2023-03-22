@@ -150,6 +150,12 @@ public class RegistrationActivity extends AppCompatActivity {
                         startActivity(i);
 
 
+                    } else if(responseCode == 201){
+                        Intent i = new Intent(RegistrationActivity.this,Change_Password_Activity.class);
+                        i.putExtra("phone",edt_contact.getText().toString());
+                        i.putExtra("cpp_code",ccp.getSelectedCountryCode());
+                        i.putExtra("isregister",true);
+                        startActivity(i);
                     }else
                     {
 

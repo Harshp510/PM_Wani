@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -38,6 +39,7 @@ public class Change_Password_Activity extends AppCompatActivity {
     boolean isregister;
     boolean isforgot;
     String phone,cpp_code;
+    LinearLayout layout_old_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class Change_Password_Activity extends AppCompatActivity {
         edt_new_password=findViewById(R.id.edt_new_password);
         edt_confirm_password=findViewById(R.id.edt_confirm_password);
         txt_setpassword_label=findViewById(R.id.txt_setpassword_label);
+        layout_old_password=findViewById(R.id.layout_old_password);
 
         txt_oldpass_error=findViewById(R.id.txt_oldpass_error);
         txt_newpass_error=findViewById(R.id.txt_newpass_error);
@@ -61,10 +64,16 @@ public class Change_Password_Activity extends AppCompatActivity {
         cpp_code=getIntent().getStringExtra("cpp_code");
         if(isregister){
             txt_setpassword_label.setText("Set Password");
+            layout_old_password.setVisibility(View.GONE);
+            txt_oldpass_error.setVisibility(View.GONE);
         }else if(isforgot){
             txt_setpassword_label.setText("Set Password");
+            layout_old_password.setVisibility(View.GONE);
+            txt_oldpass_error.setVisibility(View.GONE);
         }else{
             txt_setpassword_label.setText("Change Password");
+            layout_old_password.setVisibility(View.VISIBLE);
+            txt_oldpass_error.setVisibility(View.GONE);
         }
         btn_submit_change_password=findViewById(R.id.btn_submit_change_password);
 
@@ -112,15 +121,17 @@ public class Change_Password_Activity extends AppCompatActivity {
         String new_pass=edt_new_password.getText().toString().trim();
         String confirm_pass=edt_confirm_password.getText().toString().trim();
 
-
-        if (old_pass.isEmpty()) {
-            txt_oldpass_error.setText("Please enter old password");
-            txt_oldpass_error.setVisibility(View.VISIBLE);
-            valid = false;
-        } else {
-            txt_oldpass_error.setText("");
-            txt_oldpass_error.setVisibility(View.GONE);
+        if(!isregister && !isforgot){
+            if (old_pass.isEmpty()) {
+                txt_oldpass_error.setText("Please enter old password");
+                txt_oldpass_error.setVisibility(View.VISIBLE);
+                valid = false;
+            } else {
+                txt_oldpass_error.setText("");
+                txt_oldpass_error.setVisibility(View.GONE);
+            }
         }
+
 
 
         if (new_pass.isEmpty()) {
@@ -183,7 +194,7 @@ public class Change_Password_Activity extends AppCompatActivity {
 
                     if(responseCode==200){
 
-
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,responseMsg);
                         Intent i = new Intent(Change_Password_Activity.this,LoginActivity.class);
                         startActivity(i);
 
