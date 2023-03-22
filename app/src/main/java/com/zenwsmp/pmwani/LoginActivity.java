@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txt_sign_up;
     MaterialButton btn_login;
     ImageView ivActionBack;
+    TextView txt_forgot_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         layout_mobilenumber = findViewById(R.id.layout_mobilenumber);
         edt_Contact = findViewById(R.id.edt_Contact);
         btn_login = findViewById(R.id.btn_login);
+        txt_forgot_password = findViewById(R.id.txt_forgot_password);
         cpp=findViewById(R.id.ccp);
         edt_username.addTextChangedListener(new TextWatcher() {
             @Override
@@ -75,6 +77,11 @@ public class LoginActivity extends AppCompatActivity {
 
         ivActionBack.setOnClickListener(v -> {
             this.finish();
+        });
+        txt_forgot_password.setOnClickListener(v->
+        {
+            Intent i = new Intent(LoginActivity.this,ForgotPassword_Activity.class);
+            startActivity(i);
         });
     }
     @Override

@@ -9,7 +9,8 @@ android {
         config {
             keyAlias 'zen'
             keyPassword 'zen@123'
-            storeFile file('D:/Project/apkfile/PM-Wani/pm_wani.jsk')
+            //storeFile file('D:/Project/apkfile/PM-Wani/pm_wani.jsk')
+            storeFile file('/Users/zen/Desktop/Ndemo/pm_wani.jsk')
             storePassword 'zen@123'
         }
     }
