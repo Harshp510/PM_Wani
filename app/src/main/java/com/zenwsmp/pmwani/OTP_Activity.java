@@ -58,12 +58,16 @@ public class OTP_Activity extends AppCompatActivity {
     private int beginIndex = 25, endIndex = 33;
     private int RESOLVE_HINT = 1001;
     PinView firstPinView;
+    boolean isregister;
+    boolean isforgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
         String message=getHashCode(this);
         Log.d("mesage",""+message);
+        isregister = getIntent().getBooleanExtra("isregister",false);
+        isforgot = getIntent().getBooleanExtra("isforgot",false);
         txt_timer= findViewById(R.id.txt_timer);
         btn_verify= findViewById(R.id.btn_verify);
         txt_resend_code= findViewById(R.id.txt_resend_code);
@@ -222,12 +226,14 @@ public class OTP_Activity extends AppCompatActivity {
 
                     if(responseCode == 200){
 
-                     /*   Intent i = new Intent(OTP_Activity.this,OTP_Activity.class);
-                        i.putExtra("phone",edt_contact.getText().toString());
-                        i.putExtra("cpp_code",ccp.getSelectedCountryCode());
-                        startActivity(i);*/
+                     /*  */
                         new ConfigAPI().ShowToastMessage(OTP_Activity.this,responseMsg);
-
+                        Intent i = new Intent(OTP_Activity.this,Change_Password_Activity.class);
+                        i.putExtra("isregister",isregister);
+                        i.putExtra("isforgot",isforgot);
+                        i.putExtra("phone",phone);
+                        i.putExtra("cpp_code",cpp_code);
+                        startActivity(i);
                     }else
                     {
 

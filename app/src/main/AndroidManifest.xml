@@ -16,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PMWANI">
         <activity
+            android:theme="@style/Theme.PMWANI.NoActionBar"
             android:name=".Change_Password_Activity"
-            android:exported="false" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
