@@ -17,10 +17,15 @@
         android:theme="@style/Theme.PMWANI">
         <activity
             android:name=".Change_Password_Activity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PMWANI.NoActionBar" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
+        <activity
+            android:name=".ForgotPassword_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PMWANI.NoActionBar" />
         <activity
             android:name=".EditPersonalDetail_Activity"
             android:screenOrientation="portrait"
