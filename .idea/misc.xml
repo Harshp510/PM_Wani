@@ -4,44 +4,32 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable-hdpi/dialog_bg.xml" value="0.14" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable-hdpi/ic_location_on.xml" value="0.146" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/dialog_bg.xml" value="0.14" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/ic_brightness_low.xml" value="0.146" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/ic_show_chart.xml" value="0.146" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/ic_signal_wifi_0_bar.xml" value="0.146" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/ic_sort.xml" value="0.146" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/drawable/qam_button_back_wifi_connect.xml" value="0.14" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/access_point_view_compact.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/access_point_view_complete.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/access_point_view_hide.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/access_point_view_popup.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/access_points_content.xml" value="0.5714285714285714" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_change_password.xml" value="0.4875" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_language_selection.xml" value="0.17962962962962964" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_login.xml" value="0.17962962962962964" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_login_with2_fa.xml" value="0.21666666666666667" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_main.xml" value="0.5714285714285714" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_otp.xml" value="0.4875" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_registration.xml" value="0.536" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_startup.xml" value="0.21666666666666667" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/custom_dialog.xml" value="0.25416666666666665" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/info_faq.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/info_location.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/info_throttling.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/main_activity.xml" value="0.4449648711943794" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/main_connection.xml" value="0.5714285714285714" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/main_content.xml" value="0.4449648711943794" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/main_navigation.xml" value="0.25644028103044497" />
-        <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/main_wifi_support.xml" value="0.5714285714285714" />
+        <entry key="app/src/main/res/drawable/menu_selector.xml" value="0.1575" />
+        <entry key="app/src/main/res/layout/access_point_view_compact.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/access_point_view_complete.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/activity_add_voucher_code.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.23289070480081717" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit_personal_detail.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.25729166666666664" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.236976506639428" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.21" />
+        <entry key="app/src/main/res/menu/menu_qam.xml" value="0.24270833333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -12,21 +12,34 @@
         <!-- Status bar color. -->
        <!-- <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
 
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/purple_700</item>
 
         <item name="android:textColorPrimary">@color/black_opaque_70</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.PMWANI.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/purple_700</item>
     </style>
 
     <style name="custome" parent="Theme.PMWANI.NoActionBar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:statusBarColor">#00000000</item>
+    </style>
+    <style name="Theme.PMWANI.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.PMWANI.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
 
     <style name="account_divider">
@@ -36,6 +49,7 @@
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:background">@color/profile_divider</item>
     </style>
+
 
     <style name="ThemeDark" parent="Theme.AppCompat">
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
@@ -70,4 +84,5 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
+
 </resources>

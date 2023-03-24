@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+
+    <item android:id="@+id/menu_username"
+        android:icon="@mipmap/ic_person_line"
+        android:title="Username"
+        />
+
+
+    <item android:id="@+id/menu_mobile"
+        android:icon="@mipmap/ic_cloud"
+        android:title="Mobile No"
+        android:iconTint="#BEBEBE"
+        />
+
+
+    <item android:id="@+id/logout"
+        android:icon="@mipmap/ic_menu_logout"
+        android:title="Logout"
+        android:iconTint="#BEBEBE"
+      />
+
+
+
+</menu>

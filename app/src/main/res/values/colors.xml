@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_500">#0039a3</color>
+    <color name="purple_700">#26327f</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -27,13 +27,18 @@
     <color name="yellow">#FFBB00</color>
     <color name="error_message_color">#90ff4e4e</color>
     <color name="light_blue">#900039a3</color>
-    <color name="wifired">#F44336</color>
 
-    <!-- grey_500 -->
+
+    <color name="wifired">#F44336</color>
+    <color name="wifigreen">#4CAF50</color>
+    <color name="wifiyellow">#FFC107</color>
+
     <color name="regular">#9E9E9E</color>
     <!-- blue_500 -->
     <color name="selected">#2196F3</color>
     <!-- grey_500 -->
+
+
     <color name="channel">@color/regular</color>
     <!-- cyan_500 -->
     <color name="channel_number">#00BCD4</color>
@@ -51,4 +56,6 @@
     <color name="success">#4CAF50</color>
     <!-- background -->
     <color name="background">#616161</color>
+
+
 </resources>
