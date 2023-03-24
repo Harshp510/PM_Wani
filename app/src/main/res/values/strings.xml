@@ -1,14 +1,5 @@
 <resources>
     <string name="app_name">PM-WANI</string>
-    <string name="main_activity_title">[EN] This title is in English</string>
-    <string name="main_activity_to_tr_button">Turkish</string>
-    <string name="main_activity_to_en_button">English</string>
-    <string name="english">English</string>
-    <string name="hello">Hello</string>
-    <string name="main_activity_toolbar_title">Title in English</string>
-    <string name="main_activity_to_cn_button">Chinese</string>
-    <string name="main_second_activity">Second page ></string>
-    <string name="main_activity_to_ur_button">Urdu</string>
 
     <string name="login_text">Login With Phone</string>
     <string name="register_text">Register New Account</string>
@@ -47,4 +38,144 @@
     <!-- TODO: Remove or change this placeholder text -->
 
 
+    <string name="scanner_message">"Scanning &#8230;"</string>
+
+    <!-- action start -->
+    <string name="action_access_points">"Access Points"</string>
+    <!-- action end -->
+
+    <string name="no_data">"No Data"</string>
+    <string name="no_data_msg">"Please visit frequently ask questions section on our website."</string>
+    <string name="no_data_url" translatable="false">"https://vremsoftwaredevelopment.github.io/WiFiAnalyzer/#faq"</string>
+    <string name="permission_msg">"As of Android Marshmallow, location permissions are required to perform a Wi-Fi scan. You will be prompted to enable location services/permissions. Since this app does not require internet access, you can be confident that this app cannot transmit your location!"</string>
+    <string name="location_msg">"This app can get your precise location from location services while the app is in use. Location services for your device must be turned on for the app to get location. This may increase battery usage."</string>
+    <string name="throttling_msg">"Android 9 introduced Wi-Fi scan throttling. Android 10 has a new developer option to toggle the throttling off under (Settings > Developer Options > Networking > Wi-Fi scan throttling)."</string>
+
+    <string name="channel_short_name">"CH"</string>
+
+    <string name="mc_flag" translatable="false">"802.11mc"</string>
+
+    <!-- settings start -->
+
+    <string name="country_code_title">"Country"</string>
+    <string name="country_code_summary" translatable="false">"%s"</string>
+    <string name="country_code_key" translatable="false">"country_code"</string>
+
+    <string name="wifi_band_key" translatable="false">"wifi_band"</string>
+
+    <string name="scan_speed_title">"Scan Interval"</string>
+    <string name="scan_speed_summary">"%s seconds between each scan"</string>
+    <string name="scan_speed_key" translatable="false">"scan_speed"</string>
+    <string name="scan_speed_default" translatable="false">"5"</string>
+
+    <string name="cache_off_title" translatable="false">"Cache off"</string>
+    <string name="cache_off_key" translatable="false">"cache_off"</string>
+    <bool name="cache_off_default" translatable="false">false</bool>
+
+    <string name="experimental_title" translatable="false">"Experimental"</string>
+    <string name="experimental_key" translatable="false">"experimental_key"</string>
+
+    <string name="sort_by_title">"Sort Access Points By"</string>
+    <string name="sort_by_summary" translatable="false">"%s"</string>
+    <string name="sort_by_key" translatable="false">"sort_by"</string>
+    <string name="sort_by_default" translatable="false">"0"</string>
+    <string name="sort_by_signal_strength">"Signal Strength"</string>
+    <string name="sort_by_ssid" translatable="false">"SSID"</string>
+    <string name="sort_by_channel">"Channel"</string>
+
+    <string name="group_by_title">"Group Access Points By"</string>
+    <string name="group_by_summary" translatable="false">"%s"</string>
+    <string name="group_by_key" translatable="false">"group_by"</string>
+    <string name="group_by_default" translatable="false">"0"</string>
+    <string name="group_by_none">"None"</string>
+    <string name="group_by_ssid" translatable="false">"SSID"</string>
+    <string name="group_by_channel">"Channel"</string>
+    <string name="group_by_virtual">"Virtual"</string>
+
+    <string name="connection_view_title">"Connection Display"</string>
+    <string name="connection_view_summary" translatable="false">"%s"</string>
+    <string name="connection_view_key" translatable="false">"connection"</string>
+    <string name="connection_view_default" translatable="false">"1"</string>
+    <string name="connection_view_complete">"Complete"</string>
+    <string name="connection_view_compact">"Compact"</string>
+    <string name="connection_view_hide">"Hide"</string>
+
+    <string name="ap_view_title">"Access Point Display"</string>
+    <string name="ap_view_summary" translatable="false">"%s"</string>
+    <string name="ap_view_key" translatable="false">"view"</string>
+    <string name="ap_view_default" translatable="false">"0"</string>
+    <string name="ap_view_complete">"Complete"</string>
+    <string name="ap_view_compact">"Compact"</string>
+
+    <string name="graph_maximum_y_title">"Graph Maximum Signal Strength"</string>
+    <string name="graph_maximum_y_summary" translatable="false">"%s"</string>
+    <string name="graph_maximum_y_key" translatable="false">"graph_maximum_y"</string>
+    <string name="graph_maximum_y_default" translatable="false">"2"</string>
+
+    <string name="channel_graph_legend_title">"Channel Graph Legend Display"</string>
+    <string name="channel_graph_legend_summary" translatable="false">"%s"</string>
+    <string name="channel_graph_legend_key" translatable="false">"channel_graph_legend"</string>
+    <string name="channel_graph_legend_default" translatable="false">"2"</string>
+
+    <string name="time_graph_legend_title">"Time Graph Legend Display"</string>
+    <string name="time_graph_legend_summary" translatable="false">"%s"</string>
+    <string name="time_graph_legend_key" translatable="false">"time_graph_legend"</string>
+    <string name="time_graph_legend_default" translatable="false">"0"</string>
+
+    <string name="graph_legend_left">"Left"</string>
+    <string name="graph_legend_right">"Right"</string>
+    <string name="graph_legend_hide">"Hide"</string>
+
+    <string name="theme_title">"Theme"</string>
+    <string name="theme_summary" translatable="false">"%s"</string>
+    <string name="theme_key" translatable="false">"theme"</string>
+    <string name="theme_default" translatable="false">"0"</string>
+    <string name="theme_dark">"Dark"</string>
+    <string name="theme_light">"Light"</string>
+    <string name="theme_system">"System"</string>
+
+    <string name="wifi_off_on_exit_title">"Wi-Fi off on Exit"</string>
+    <string name="wifi_off_on_exit_key" translatable="false">"wifi_off_on_exit"</string>
+    <bool name="wifi_off_on_exit_default" translatable="false">false</bool>
+
+    <string name="keep_screen_on_title">"Keep screen on"</string>
+    <string name="keep_screen_on_key" translatable="false">"keep_screen_on"</string>
+    <bool name="keep_screen_on_default" translatable="false">false</bool>
+
+    <string name="language_title">"Language"</string>
+    <string name="language_summary" translatable="false">"%s"</string>
+    <string name="language_key" translatable="false">"language"</string>
+    <!-- settings end -->
+
+    <!-- about start -->
+    <!-- about end -->
+
+    <!-- license start -->
+    <!-- license end -->
+
+    <!-- Wi-Fi band start -->
+    <string name="wifi_band_2ghz" translatable="false">"2.4 GHz"</string>
+    <string name="wifi_band_5ghz" translatable="false">"5 GHz"</string>
+    <string name="wifi_band_6ghz" translatable="false">"6 GHz"</string>
+    <!-- Wi-Fi band end -->
+
+    <!-- Wi-Fi standard start -->
+    <string name="wifi_standard_unknown" translatable="false">""</string>
+    <string name="wifi_standard_legacy" translatable="false">"Wi-Fi 802.11a/b/g"</string>
+    <string name="wifi_standard_n" translatable="false">"Wi-Fi 802.11n"</string>
+    <string name="wifi_standard_ac" translatable="false">"Wi-Fi 802.11ac"</string>
+    <string name="wifi_standard_ax" translatable="false">"Wi-Fi 802.11ax"</string>
+    <string name="wifi_standard_ad" translatable="false">"Wi-Fi 802.11ad"</string>
+    <string name="wifi_standard_be" translatable="false">"Wi-Fi 802.11be"</string>
+    <!-- Wi-Fi standard end -->
+
+    <!-- security start -->
+    <!-- security end -->
+
+    <!-- filter start -->
+    <string name="filter_ssid_key" translatable="false">"filter_ssid"</string>
+    <string name="filter_wifi_band_key" translatable="false">"filter_wifi_band"</string>
+    <string name="filter_strength_key" translatable="false">"filter_strength"</string>
+    <string name="filter_security_key" translatable="false">"filter_security"</string>
+    <!-- filter end -->
 </resources>

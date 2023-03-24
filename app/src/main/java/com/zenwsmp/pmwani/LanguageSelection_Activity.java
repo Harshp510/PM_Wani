@@ -82,7 +82,7 @@ public class LanguageSelection_Activity extends AppCompatActivity {
                 Intent i = new Intent(LanguageSelection_Activity.this,Startup_Activity.class);
                 startActivity(i);
             }else{
-                Intent i = new Intent(LanguageSelection_Activity.this,MainActivity.class);
+                Intent i = new Intent(LanguageSelection_Activity.this,Startup_Activity.class);
                 startActivity(i);
             }
         });
