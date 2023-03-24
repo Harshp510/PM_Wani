@@ -1,12 +1,8 @@
 <resources>
     <string name="app_name">PM-WANI</string>
 
-    <string name="english">अंग्रेज़ी</string>
-    <string name="hello">ਸਤ ਸ੍ਰੀ ਅਕਾਲ</string>
     <string name="login_text">ਫੋਨ ਨਾਲ ਲੌਗਇਨ ਕਰੋ</string>
     <string name="register_text">ਨਵਾਂ ਖਾਤਾ ਰਜਿਸਟਰ ਕਰੋ</string>
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 
     <string name="proceed_text">ਅੱਗੇ ਵਧੋ</string>
     <string name="Glad_to_see">ਵੇਖ ਕੇ ਖੁਸ਼ੀ ਹੋਈ</string>

@@ -10,7 +10,6 @@
     <color name="mainblack">#343434</color>
     <color name="maingreen">#0039a3</color>
     <color name="grey50">#ffcacaca</color>
-    <color name="event_pricing_date_chooser_stroke_color_normal">#b7b7b7</color>
     <color name="event_pricing_date_chooser_stroke_color_other">#ffffff</color>
     <color name="event_pricing_date_chooser_textColor_normal">#333333</color>
     <color name="event_pricing_date_chooser_textColor_disabled">#FFFFFF</color>
@@ -28,20 +27,28 @@
     <color name="yellow">#FFBB00</color>
     <color name="error_message_color">#90ff4e4e</color>
     <color name="light_blue">#900039a3</color>
-    <color name="light_blue2">#F2F5FA</color>
     <color name="wifired">#F44336</color>
 
-    <array name="demo_colors">
-        <item>@color/yellow</item>
-        <item>@color/light_blue</item>
-        <item>@color/maingreen</item>
-        <item>@color/purple_200</item>
-        <item>@color/purple_500</item>
-        <item>@color/purple_700</item>
-        <item>@color/teal_200</item>
-        <item>@color/teal_700</item>
-
-    </array>
-
-
+    <!-- grey_500 -->
+    <color name="regular">#9E9E9E</color>
+    <!-- blue_500 -->
+    <color name="selected">#2196F3</color>
+    <!-- grey_500 -->
+    <color name="channel">@color/regular</color>
+    <!-- cyan_500 -->
+    <color name="channel_number">#00BCD4</color>
+    <!-- cyan_700 -->
+    <color name="frequency">#0097A7</color>
+    <!-- blue_grey_500 -->
+    <color name="security">#607D8B</color>
+    <!-- teal_500 -->
+    <color name="distance">#009688</color>
+    <!-- red_500 -->
+    <color name="error">#F44336</color>
+    <!-- amber_500 -->
+    <color name="warning">#FFC107</color>
+    <!-- green_500 -->
+    <color name="success">#4CAF50</color>
+    <!-- background -->
+    <color name="background">#616161</color>
 </resources>

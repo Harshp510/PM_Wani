@@ -1,12 +1,8 @@
 <resources>
     <string name="app_name">PM-WANI</string>
 
-    <string name="english">अंग्रेज़ी</string>
-    <string name="hello">ہیلو</string>
     <string name="login_text">ফفون سے لاگ ان کریں۔</string>
     <string name="register_text">نیا اکاؤنٹ رجسٹر کریں۔</string>
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 
     <string name="proceed_text">آگے بڑھو</string>
     <string name="Glad_to_see">دیکھ کر خوشی ہوئی۔</string>

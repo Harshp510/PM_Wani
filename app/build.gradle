@@ -14,7 +14,7 @@ android {
             storePassword 'zen@123'
         }
     }
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         configurations.all {
@@ -22,7 +22,7 @@ android {
         }
         applicationId "com.zenwsmp.pmwani"
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.maksim88:PasswordEditText:v0.9'
     implementation 'com.google.android.gms:play-services-auth:20.4.1'
     implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
-
+    implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation files('libs/android-async-http-1.4.9.jar')
     implementation files('libs/httpclient-4.4.1.1.jar')
 }
