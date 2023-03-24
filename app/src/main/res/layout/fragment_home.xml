@@ -7,7 +7,6 @@
    >
 
     <LinearLayout
-        android:id="@+id/layout_search"
         android:background="@drawable/edittext_outer_border_search"
         android:weightSum="1"
         android:padding="10dp"

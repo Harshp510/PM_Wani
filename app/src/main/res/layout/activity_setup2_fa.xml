@@ -125,7 +125,6 @@
             <com.chaos.view.PinView
                 android:layout_below="@+id/lbl_reenter_your_pin"
                 android:layout_marginTop="10dp"
-                android:id="@+id/secondPinView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"

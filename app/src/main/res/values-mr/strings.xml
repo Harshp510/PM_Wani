@@ -5,8 +5,6 @@
     <string name="hello">नमस्कार</string>
     <string name="login_text">फोनद्वारे लॉगिन करा</string>
     <string name="register_text">नवीन खात्याची नोंदणी करा</string>
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 
     <string name="proceed_text">पुढे जा</string>
     <string name="Glad_to_see">पाहून आनंद झाला</string>

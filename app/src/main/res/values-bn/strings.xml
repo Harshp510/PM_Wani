@@ -23,6 +23,4 @@
     <string name="already_registered">ইতিমধ্যে নিবন্ধভুক্ত?</string>
     <string name="sign_in">সাইন ইন করুন</string>
 
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 </resources>

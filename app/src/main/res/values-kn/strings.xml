@@ -5,8 +5,6 @@
     <string name="hello">ನಮಸ್ಕಾರ</string>
     <string name="login_text">ಫೋನಿನೊಂದಿಗೆ ಲಾಗಿನ್ ಮಾಡಿ</string>
     <string name="register_text">ಹೊಸ ಖಾತೆಯನ್ನು ನೋಂದಾಯಿಸಿ</string>
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 
     <string name="proceed_text">ಮುಂದುವರೆಯಲು</string>
     <string name="Glad_to_see">ನೋಡಿ ಸಂತೋಷವಾಯಿತು</string>

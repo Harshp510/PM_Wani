@@ -5,8 +5,6 @@
     <string name="hello">வணக்கம்</string>
     <string name="login_text">தொலைபேசியுடன் உள்நுழைக</string>
     <string name="register_text">புதிய கணக்கை பதிவு செய்யவும்</string>
-    <string name="dark" translatable="false">Dark</string>
-    <string name="light" translatable="false">Light</string>
 
     <string name="proceed_text">தொடரவும்</string>
     <string name="Glad_to_see">பார்க்க மகிழ்ச்சி</string>

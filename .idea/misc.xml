@@ -15,10 +15,14 @@
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_registration.xml" value="0.536" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/activity_startup.xml" value="0.21666666666666667" />
         <entry key="..\:/Project/QN_2020/PM-WANI/app/src/main/res/layout/custom_dialog.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_add_voucher_code.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.23289070480081717" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit_personal_detail.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.25729166666666664" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.236976506639428" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.21" />
+        <entry key="app/src/main/res/menu/menu_qam.xml" value="0.24270833333333333" />
       </map>
     </option>
   </component>

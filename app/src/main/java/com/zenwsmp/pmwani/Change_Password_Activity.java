@@ -195,6 +195,7 @@ public class Change_Password_Activity extends AppCompatActivity {
                     if(responseCode==200){
 
                         new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,responseMsg);
+
                         Intent i = new Intent(Change_Password_Activity.this,LoginActivity.class);
                         startActivity(i);
 
