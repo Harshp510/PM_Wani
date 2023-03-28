@@ -107,6 +107,7 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <TextView
+            android:id="@+id/txt_mobile_error"
             android:textSize="14dp"
             android:text="@string/mobile_number_error_message"
             android:textStyle="normal"
@@ -182,7 +183,7 @@
 
         </LinearLayout>
         <TextView
-
+            android:id="@+id/txt_password_error"
             android:textSize="14dp"
             android:text="@string/mobile_number_error_message"
             android:textStyle="normal"

@@ -444,6 +444,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            
             android:gravity="center"
             android:textSize="16dp"
             android:text="Your wifi setting is disabled. Please enable wifi"
@@ -471,6 +472,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/txt_error_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -19,6 +19,7 @@ public class Account_Activity extends AppCompatActivity {
         layout_addvouchercode =findViewById(R.id.layout_addvouchercode);
         basic_detail_card =findViewById(R.id.basic_detail_card);
 
+
         layout_addvouchercode.setOnClickListener(v -> {
             Intent i =new Intent(Account_Activity.this,AddVoucherCode_Activity.class);
             startActivity(i);
