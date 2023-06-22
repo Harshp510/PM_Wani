@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/more_menu_minHeight"
+    android:orientation="horizontal"
+    android:padding="@dimen/more_menu_padding">
+
+    <ImageView
+        android:id="@+id/ivItemIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/ic_more_about_us" />
+
+    <TextView
+        android:id="@+id/tvItemText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:textColor="#515151"
+        android:textSize="@dimen/more_menu_item_textSize"
+        tools:text="Item" />
+</LinearLayout>

@@ -39,6 +39,8 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.MySSLSocketFactory;
 import com.loopj.android.http.RequestParams;
+import com.zenwsmp.pmwani.adapter.TransactionAdapter;
+import com.zenwsmp.pmwani.model.TransactionBean;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,15 +49,17 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.security.KeyStore;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.ByteArrayEntity;
 import cz.msebera.android.httpclient.message.BasicHeader;
 import cz.msebera.android.httpclient.protocol.HTTP;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends Base_Drawer {
 
 
     WifiManager wifiManager;
@@ -65,26 +69,37 @@ public class DashboardActivity extends AppCompatActivity {
     private TextView txt_tool_strength_name, txt_tool_network_name, txt_tool_bssid_name,txt_tool_ip_name;
     private TextView ll_devices_title;
     LinearLayout ll_devices;
-    ImageView img_settings;
+   // ImageView img_settings;
     SharedPreferences sp_userdetail;
-    String Str_Userid;
+    String Str_cpp;
     String Str_UserName;
-    String Str_Password;
+    String Str_email;
     String Str_Rudder_Id;
-    String Str_cloud_id;
-    String Str_Device_uuid;
+    String Str_fullname;
+    String Str_mobile;
     private static AsyncHttpClient client;
     private boolean backPressedToExitOnce = false;
-
+    Button btn_scan;
+    TextView txt_planname,txt_dataremain,total_plandata,plan_expire,btn_buy;
+    LinearLayout activeplan_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-
+        View rootView = getLayoutInflater().inflate(R.layout.activity_dashboard, frameLayout);
+      //  setContentView(R.layout.activity_dashboard);
+        search_icon.setVisibility(View.GONE);
+        txt_menuTitle.setText("Dashboard");
         ll_devices=findViewById(R.id.ll_devices);
         ll_devices_title=findViewById(R.id.ll_devices_title);
+        btn_scan=findViewById(R.id.btn_scan);
 
-
+        txt_planname= findViewById(R.id.txt_planname);
+        txt_dataremain= findViewById(R.id.txt_dataremain);
+        total_plandata= findViewById(R.id.total_plandata);
+        plan_expire= findViewById(R.id.plan_expire);
+        btn_buy= findViewById(R.id.btn_buy);
+        activeplan_layout= findViewById(R.id.activeplan_layout);
+        activeplan_layout.setVisibility(View.GONE);
 
         sp_userdetail = getSharedPreferences("userdetail.txt", Context.MODE_PRIVATE);
         client= new AsyncHttpClient();
@@ -92,12 +107,12 @@ public class DashboardActivity extends AppCompatActivity {
 
 
         try {
-            Str_Userid = sp_userdetail.getString("user_id", null);
-            Str_UserName = sp_userdetail.getString("user_name", null);
-            Str_Password = sp_userdetail.getString("password", null);
-            Str_Rudder_Id = sp_userdetail.getString("rudder_id", null);
-            Str_cloud_id = sp_userdetail.getString("cloud_id", null);
-
+            //Str_Userid = sp_userdetail.getString("user_id", null);
+            Str_fullname = sp_userdetail.getString("full_name", null);
+            Str_email = sp_userdetail.getString("email", null);
+            Str_mobile = sp_userdetail.getString("mobile", null);
+            Str_cpp = sp_userdetail.getString("cpp", null);
+            txt_username.setText("Hi "+Str_fullname.toUpperCase());
         }catch (Exception e)
         {
             e.printStackTrace();
@@ -109,7 +124,7 @@ public class DashboardActivity extends AppCompatActivity {
         txt_tool_strength_name = findViewById(R.id.txt_tool_strength_name);
         txt_tool_network_name = findViewById(R.id.txt_tool_network_name);
         txt_tool_bssid_name = findViewById(R.id.txt_tool_bssid_name);
-        img_settings=findViewById(R.id.img_settings);
+     //   img_settings=findViewById(R.id.img_settings);
 
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
@@ -117,7 +132,7 @@ public class DashboardActivity extends AppCompatActivity {
         Log.d("linkspeed", "" + wifiInfo.getFrequency());
 
 
-        img_settings.setOnClickListener(new View.OnClickListener() {
+        profile_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showMenu(v);
@@ -126,7 +141,27 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        btn_scan.setOnClickListener(v -> {
+            Dialog dialog = new Dialog(this);
+            // Include dialog.xml file
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.custom_dialog);
 
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.setCancelable(false);
+            // Set dialog title
+            // dialog.setTitle("Custom Dialog");
+            dialog.show();
+
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    new ConfigAPI().ShowToastMessage(DashboardActivity.this,"No PM WANI Hotspot Found");
+                    dialog.dismiss();
+                }
+            }, 5000);
+        });
 
 
         Runnable runnable = new Runnable() {
@@ -184,6 +219,28 @@ public class DashboardActivity extends AppCompatActivity {
 
 // start it with:
         handler.post(runnable);
+
+
+        if(new connectionDector(this).isConnectingToInternet()) {
+
+            try {
+                GetCurrent_Plan_Detail();
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
+            }
+            //getDeviceDetail();
+        }
+        else
+        {
+            //refreshLayout.setRefreshing(false);
+            new ConfigAPI().ShowToastMessage(this,"No Internet Connection");
+        }
+
+        btn_buy.setOnClickListener(v -> {
+            Intent intent=new Intent(DashboardActivity.this, AvailablePlanActivity.class);
+            startActivity(intent);
+        });
+
     }
 
 
@@ -253,7 +310,109 @@ public class DashboardActivity extends AppCompatActivity {
 
 
 
+    private void GetCurrent_Plan_Detail() throws UnsupportedEncodingException {
 
+
+
+       /* RequestParams params = new RequestParams();
+        params.put("",jsonObject);
+        // StringEntity entity = new StringEntity(params.toString());
+        final ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
+        entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));*/
+        //  params.put("Password",jsonpassword);
+        final String url= ConfigAPI.MAIN_URL+"get_active_plan";
+        Log.d("url",url);
+        client.addHeader(ConfigAPI.Authorization,ConfigAPI.Bearer+sp_userdetail.getString("auth_token",null));
+        client.setTimeout(20*1000);
+        client.setMaxRetriesAndTimeout(0,10*1000);
+        client.get(DashboardActivity.this,url,null,new JsonHttpResponseHandler()
+        {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.d("res",response.toString());
+
+                try {
+
+                    int responseCode=response.getInt("responseCode");
+                    String responseMsg=response.getString("message");
+
+                    if(responseCode==200){
+                        activeplan_layout.setVisibility(View.VISIBLE);
+                        JSONObject object = response.getJSONObject("data");
+                        txt_planname.setText(object.getString("plan_name"));
+                        txt_dataremain.setText(object.getString("data_remaining"));
+                        total_plandata.setText("left of "+object.getString("total_data"));
+                        plan_expire.setText(" You're on "+getResources().getString(R.string.Rs)+object.getString("price") +"-"+object.getString("validity")+" "+object.getString("validity_unit")+" plan Expires on "+object.getString("expiration")+".");
+                    }else
+                    {
+                        activeplan_layout.setVisibility(View.GONE);
+                        new ConfigAPI().ShowToastMessage(DashboardActivity.this,responseMsg);
+                    }
+
+
+
+                }
+                catch (Exception e)
+                {
+                    activeplan_layout.setVisibility(View.GONE);
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+
+                activeplan_layout.setVisibility(View.GONE);
+                if(errorResponse!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(DashboardActivity.this,errorResponse.getString("message"));
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(DashboardActivity.this,"Something went wrong,Please try again later");
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+
+                activeplan_layout.setVisibility(View.GONE);
+                if(responseString!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(DashboardActivity.this,responseString);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(DashboardActivity.this,"Something went wrong,Please try again later");
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+
+                activeplan_layout.setVisibility(View.GONE);
+                if(errorResponse!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(DashboardActivity.this,errorResponse.toString());
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(DashboardActivity.this,"Something went wrong,Please try again later");
+                }
+            }
+        });
+
+
+    }
 
     public void showMenu(View v) {
         /*PopupMenu popup1 = new PopupMenu(this, v);
@@ -285,8 +444,8 @@ public class DashboardActivity extends AppCompatActivity {
         popup.getMenuInflater().inflate(R.menu.menu_qam, popup.getMenu());
         Menu menuOpts = popup.getMenu();
 
-        menuOpts.findItem(R.id.menu_username).setTitle(Str_UserName);
-        menuOpts.findItem(R.id.menu_mobile).setTitle(Str_Rudder_Id);
+       // menuOpts.findItem(R.id.menu_username).setTitle(Str_fullname);
+      //  menuOpts.findItem(R.id.menu_mobile).setTitle(Str_email);
 
 
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -299,14 +458,15 @@ public class DashboardActivity extends AppCompatActivity {
                         setlogoutdata();
                         break;
                     }
-                    case R.id.menu_mobile:
-                    {
 
-                        break;
-                    }
-                    case R.id.menu_username:
+                    case R.id.changepassword:
                     {
-
+                        Intent i = new Intent(DashboardActivity.this,Change_Password_Activity.class);
+                        i.putExtra("isregister",false);
+                        i.putExtra("isforgot",false);
+                        i.putExtra("phone",Str_mobile);
+                        i.putExtra("cpp_code",Str_cpp);
+                        startActivity(i);
                         break;
                     }
 
@@ -456,7 +616,30 @@ public class DashboardActivity extends AppCompatActivity {
 
     }*/
 
+    public String parseDateToddMMyyyy(String time) {
+        String str = null;
+        if (!time.isEmpty() && time != null) {
+            String outputPattern = "dd MMM yyyy";
+            String inputPattern = "dd MMM yyyy hh:mm a";
+            SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern);
+            SimpleDateFormat outputFormat = new SimpleDateFormat(outputPattern);
 
+            Date date = null;
+
+
+            try {
+                date = inputFormat.parse(time);
+                str = outputFormat.format(date);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else{
+            str="";
+        }
+
+
+        return str;
+    }
     public void setlogoutdata()
     {
 

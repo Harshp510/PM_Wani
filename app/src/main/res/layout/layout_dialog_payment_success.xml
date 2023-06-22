@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:minWidth="@dimen/dialog_minWidth"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/ivOtpIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_payment_success_icon" />
+
+        <TextView
+            android:id="@+id/tvLabel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/payment_success_label1"
+            android:textColor="@color/themeRed"
+            android:textSize="@dimen/otp_verification_label_textSize" />
+
+        <TextView
+            android:id="@+id/tvLabel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#707070"
+            android:text="@string/payment_success_label2"
+            android:textSize="@dimen/otp_verification_label_textSize" />
+    </LinearLayout>
+
+    <View style="@style/account_divider_section" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvTransIdLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#707070"
+                android:textSize="@dimen/event_list_date_textSize"
+                android:gravity="end|center_vertical"
+                android:textAllCaps="true"
+                android:text="@string/mticket_booking_id_label" />
+
+            <TextView
+                android:id="@+id/tvTransId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#707070"
+                android:textSize="@dimen/event_list_date_textSize"
+                android:gravity="start|center_vertical"
+                tools:text="@string/payment_success_transaction_id" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvTotalAmountLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#707070"
+                android:textAllCaps="true"
+                android:textSize="@dimen/event_list_date_textSize"
+                android:gravity="end|center_vertical"
+                android:text="@string/payment_success_total_amount" />
+
+            <TextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#707070"
+                android:textSize="@dimen/event_list_date_textSize"
+                android:gravity="start|center_vertical"
+                tools:text="@string/payment_success_total_amount" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:minWidth="170dp"
+            android:text="@android:string/ok" />
+    </LinearLayout>
+</LinearLayout>

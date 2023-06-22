@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
@@ -7,8 +7,8 @@
     <dimen name="event_pricing_date_corner_radius">8dp</dimen>
     <dimen name="event_pricing_date_inner_padding_horizontal">2dp</dimen>
     <dimen name="event_pricing_date_inner_padding_vertical">2dp</dimen>
-    <color name="profile_divider">#ECECEC</color>
-    <dimen name="divider_height">0.5dp</dimen>
+
+
 
     <dimen name="list_view_item_horizontal_spacer">4dp</dimen>
     <dimen name="list_view_item_horizontal_tab">24dp</dimen>
@@ -18,4 +18,92 @@
 
     <dimen name="icon_small">12dp</dimen>
     <dimen name="icon_large">36dp</dimen>
+
+    <dimen name="design_bottom_navigation_item_max_width" tools:override="true">400dp</dimen>
+    <dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">400dp</dimen>
+    <dimen name="design_bottom_navigation_icon_size" tools:override="true">6dp</dimen>
+
+    <dimen name="toolbar_title_textSize">18sp</dimen>
+    <dimen name="toolbar_divider_height">1dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+    <dimen name="dialog_minWidth">300dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="radius_16">16dp</dimen>
+    <!-- SPLASH -->
+
+    <!-- HOME -->
+
+    <dimen name="event_tag_padding_horizontal">4dp</dimen>
+    <dimen name="event_list_date_textSize">12sp</dimen>
+
+    <!-- SEARCH -->
+
+    <!-- MY ACCOUNT -->
+
+    <!-- MORE MENU -->
+
+    <!-- LOGIN / REGISTER / FORGOT PASSWORD -->
+    <dimen name="login_input_textSize">15sp</dimen>
+    <dimen name="login_button_textSize">15sp</dimen>
+
+    <!-- CARD -->
+
+    <!-- BUTTON -->
+    <dimen name="button_minWidth">120dip</dimen>
+    <dimen name="button_minHeight">40dip</dimen>
+    <!-- Default insets (outer padding) around buttons -->
+    <dimen name="button_inset_vertical_material">6dp</dimen>
+    <dimen name="button_inset_horizontal_material">@dimen/control_inset_material</dimen>
+    <!-- Default inner padding within buttons -->
+    <dimen name="button_padding_vertical_material">@dimen/control_padding_material</dimen>
+    <dimen name="button_padding_horizontal_material">8dp</dimen>
+    <!-- Default insets (outer padding) around controls -->
+    <dimen name="control_inset_material">4dp</dimen>
+    <!-- Default inner padding within controls -->
+    <dimen name="control_padding_material">4dp</dimen>
+    <!-- Default rounded corner for controls -->
+    <dimen name="control_corner_material">5dp</dimen>
+    <dimen name="control_corner_large">2dp</dimen>
+
+    <!-- EVENT DETAIL -->
+
+    <!-- EVENT PRICING -->
+
+
+    <!-- ATTRACTION - SELECT DATE & TIME -->
+
+    <!-- ORDER SUMMARY -->
+
+    <!-- PURCHASE TICKET -->
+    <dimen name="purchase_ticket_edittext_textSize">15sp</dimen>
+    <dimen name="purchase_ticket_terms_title_textSize">15sp</dimen>
+    <dimen name="purchase_ticket_terms_desc_textSize">13sp</dimen>
+
+    <!-- EDIT PROFILE -->
+
+
+    <!--CUSTOMER CARE-->
+
+    <!-- BOOKING CONFIRMATION -->
+
+    <!-- MORE MENUS -->
+
+    <!-- OTP VERIFICATION -->
+    <dimen name="otp_verification_label_textSize">18sp</dimen>
+
+
+    <!-- BOOKING HISTORY-->
+
+    <!-- M-TICKET -->
+
+    <!--VIEW TICKET-->
+
+    <!-- NOTIFICATION LIST -->
+
+    <!-- SHARE TICKET -->
+    <dimen name="more_menu_minHeight">60dp</dimen>
+    <dimen name="more_menu_padding">5dp</dimen>
+    <dimen name="more_menu_item_textSize">16sp</dimen>
+
+    <dimen name="otp_verification_pin_textSize">26sp</dimen>
 </resources>

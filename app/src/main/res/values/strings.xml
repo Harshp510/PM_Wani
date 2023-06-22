@@ -8,12 +8,14 @@
     <string name="you_again">you again !</string>
     <string name="phone_number">Phone Number</string>
     <string name="or">OR</string>
+    <string name="Rs">\u20B9</string>
     <string name="Username">Username</string>
     <string name="password">Password</string>
     <string name="mobile_number_error_message">Invalid Mobile Number</string>
     <string name="not_yet_register">Not Register Yet?</string>
     <string name="sign_up">Sign Up</string>
-
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="sign_up_and">Sign Up And</string>
     <string name="start_using_wifi">Start Using WIFI</string>
 
@@ -177,5 +179,57 @@
     <string name="filter_wifi_band_key" translatable="false">"filter_wifi_band"</string>
     <string name="filter_strength_key" translatable="false">"filter_strength"</string>
     <string name="filter_security_key" translatable="false">"filter_security"</string>
+    <string name="btn_pay">PAY</string>
+    <string name="str_srh_payment_method">Search for your bank</string>
+    <string name="validation_name_only_digits">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</string>
+    <string name="title_fragment_more">More</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_submit">Submit</string>
+    <string name="card_no">Card Number</string>
+    <string name="valid_thru">Valid Thru</string>
+    <string name="todo">TODO</string>
+    <string name="select_month">Select Month</string>
+    <string name="select_year">Select Year</string>
+    <string name="cvv_des">It\'s a 3 digit code printed on the back of your card </string>
+    <string name="card_cvv">CVV</string>
+    <string name="card_name">Card Name</string>
+    <string name="payable_amount">Payable Amount</string>
+    <string name="payment_success_label1">Congratulations</string>
+    <string name="payment_success_label2">Payment Successful</string>
+    <string name="payment_success_transaction_id">Transaction Id :</string>
+    <string name="payment_success_total_amount">Total Amount :</string>
+    <string name="mticket_booking_id_label">Order ID : </string>
+    <string name="credit_debit_card">Credit / Debit Card</string>
+    <string name="rs1">\u20B9</string>
+    <string name="title_activity_credit_debit_card">Credit/Debit Card</string>
+    <string name="title_activity_upi">Upi</string>
+    <string name="title_activity_select_bank">Net Banking</string>
+    <string name="title_activity_wallet">Wallet</string>
+
+    <string name="payment_status_failed">Failed</string>
+    <string name="payment_status_pending">Pending</string>
+    <string name="payment_title_success">Thank You</string>
+    <string name="payment_title_failed">Failed</string>
+    <string name="payment_title_pending">Payment Pending</string>
+    <string name="payment_msg_empty_order_id">Please try again.</string>
+    <string name="payment_msg_no_internet">No internet connection! Please try again.</string>
+    <string name="payment_msg_error">Error while making payment. Please try after sometime.</string>
+    <string name="payment_msg_cancel">Payment is cancelled.</string>
+    <string name="payment_msg_success_no_internet">We Received your payment successfully but due to no internet we cannot process. Please contact us on info@matrubharti.com </string>
+    <string name="title_activity_select_payment">Select Payment</string>
     <!-- filter end -->
+    <string name="msg_no_internet">No internet connection! Please try again.</string>
+    <string name="msg_no_internet_mini">No internet connection!</string>
+
+    <!-- OTP VERIFICATION -->
+    <string name="otp_verification_label1">Enter one time password</string>
+    <string name="otp_verification_label2">(OTP)</string>
+    <string name="otp_verification_pin">PIN</string>
+    <string name="otp_msg_enter_otp">Please enter OTP.</string>
+    <string name="otp_msg_enter_otp_valid">Please enter valid 6 digit OTP.</string>
+
+    <!-- PAYMENT SUCCESS -->
+
+    <string name="btn_close">Close</string>
+    <string name="str_price_free">₹ Free</string>
 </resources>

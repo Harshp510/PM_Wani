@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:minWidth="@dimen/dialog_minWidth"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/tvLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/otp_verification_label1"
+        android:textColor="#3E3E3E"
+        android:textSize="@dimen/otp_verification_label_textSize" />
+
+    <TextView
+        android:id="@+id/tvLabel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/otp_verification_label2"
+        android:textColor="@color/themeRed"
+        android:textSize="@dimen/otp_verification_label_textSize" />
+
+    <ImageView
+        android:id="@+id/ivOtpIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_otp_icon" />
+
+    <EditText
+        android:id="@+id/etOTP"
+        style="@style/editTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:digits="0123456789"
+        android:gravity="center"
+        android:hint="@string/otp_verification_pin"
+        android:inputType="number"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:textColor="#484848"
+        android:textSize="@dimen/otp_verification_pin_textSize"
+        tools:text="983923" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnClose"
+            style="@style/buttonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.5"
+            android:text="@string/btn_close" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/buttonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="0.5"
+            android:text="@string/btn_submit" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvResendOTPTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:minHeight="40dp"
+        tools:text="Resend OTP in 00:18" />
+
+    <Button
+        android:id="@+id/btnResendOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="?selectableItemBackground"
+        android:minHeight="40dp"
+        android:minWidth="180dp"
+        android:text="RESEND"
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>

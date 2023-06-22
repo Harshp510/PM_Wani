@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themeGray"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_toolbar" />
+
+    <View
+        android:id="@+id/toolbarBottomDivider"
+        style="@style/toolbarBottomDivider" />
+
+    <LinearLayout
+        android:id="@+id/llRazorPay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="5dp">
+
+                <ScrollView
+                    android:id="@+id/sv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="8dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <EditText
+                            android:id="@+id/cardNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:cursorVisible="true"
+                            android:hint="@string/card_no"
+                            android:inputType="phone"
+                            android:maxLength="22"
+                            android:paddingBottom="16dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <!--<android.support.design.widget.TextInputLayout
+                            android:id="@+id/tiCardNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/edtCardNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/card_no"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""/>
+
+                        </android.support.design.widget.TextInputLayout>-->
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiCardNo"
+                            android:hint="@string/card_no"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtCardNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+
+                                android:inputType="number"
+                                android:maxLength="22"
+                                android:singleLine="true"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    style="@style/editTextStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:fontFamily="@font/roboto"
+                                    android:text="@string/valid_thru"
+                                    android:textColor="@color/purchase_ticket_edittext_textColor"
+                                    android:textSize="12sp" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:baselineAligned="true"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/monthSpinner1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/txtMonth"
+                                                style="@style/editTextStyle"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_weight="2"
+                                                android:fontFamily="@font/roboto"
+                                                android:text=""
+                                                android:textColor="@color/purchase_ticket_edittext_textColor"
+                                                android:textSize="@dimen/purchase_ticket_edittext_textSize" />
+
+                                            <ImageView
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_gravity="center"
+                                                android:contentDescription="@string/todo"
+                                                android:src="@drawable/ic_arrow_drop_down"
+                                                app:tint="@color/black_opaque_70" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_margin="5dp"
+                                            android:background="@color/themeGray" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/yearSpinner1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="50dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_marginRight="5dp"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/txtYear"
+                                                style="@style/editTextStyle"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="2"
+                                                android:layout_gravity="center"
+                                                android:fontFamily="@font/roboto"
+                                                android:text=""
+                                                android:textColor="@color/purchase_ticket_edittext_textColor"
+                                                android:textSize="@dimen/purchase_ticket_edittext_textSize" />
+
+                                            <ImageView
+                                                android:layout_width="25dp"
+                                                android:layout_height="25dp"
+                                                android:layout_gravity="center"
+                                                android:contentDescription="@string/todo"
+                                                android:src="@drawable/ic_arrow_drop_down"
+                                                app:tint="@color/black_opaque_70" />
+
+                                        </LinearLayout>
+
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:layout_margin="5dp"
+                                            android:background="@color/themeGray" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <Spinner
+                                android:id="@+id/monthSpinner"
+                                style="@style/PurchesTicketSpinnerStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:imeOptions="actionNext"
+                                android:prompt="@string/select_month"
+                                android:spinnerMode="dialog"
+                                android:visibility="gone" />
+
+                            <Spinner
+                                android:id="@+id/yearSpinner"
+                                style="@style/PurchesTicketSpinnerStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:prompt="@string/select_year"
+                                android:spinnerMode="dialog"
+                                android:visibility="gone" />
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="end|center"
+                                android:gravity="end"
+                                android:baselineAligned="false">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tiCardCvv"
+                                    android:layout_width="100dp"
+                                    android:hint="@string/card_cvv"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_height="wrap_content">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/edtCardCvv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+
+                                        android:inputType="numberPassword"
+                                        android:maxLength="4"
+                                        android:singleLine="true"
+                                        android:text="" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+                                <ImageView
+                                    android:id="@+id/img_info"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_info"
+                                    app:tint="@color/black_opaque_70" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiCardName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:hint="@string/card_name"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtCardName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:inputType="text"
+                                android:singleLine="true"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tvItemText"
+                    style="@style/editTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:minWidth="100dp"
+                    android:text="@string/payable_amount"
+                    android:textColor="@color/purchase_ticket_edittext_textColor"
+                    android:textSize="@dimen/purchase_ticket_edittext_textSize" />
+
+                <TextView
+                    android:id="@+id/txtAmt"
+                    style="@style/editTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="end"
+                    android:text=""
+                    android:textColor="@color/purchase_ticket_edittext_textColor"
+                    android:textSize="@dimen/purchase_ticket_edittext_textSize" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@id/llPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_theme_bg_large_effect"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/commonButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_theme_bg_large_effect"
+                android:text="@string/btn_pay" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<Button
+        android:id="@+id/btnSubmit"
+        style="@style/commonButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_theme_bg_large_effect"
+        android:padding="8dp"
+        android:text="@string/btn_pay" />-->
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+    </WebView>
+
+
+</LinearLayout>

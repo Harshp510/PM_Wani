@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <View
+        android:id="@+id/toolbarBottomDivider"
+        style="@style/toolbarBottomDivider" />
+
+    <GridView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:layout_margin="5dp"
+        android:background="@color/transparent"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:visibility="visible">
+
+    </GridView>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        style="@style/commonButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:background="@drawable/btn_theme_bg_large_effect"
+        android:text="@string/btn_submit" />
+</LinearLayout>

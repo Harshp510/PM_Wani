@@ -93,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         try {
             JSONObject object1=new JSONObject();
-            object1.put("token","11");
+            object1.put("token",ConfigAPI.ACCESS_TOKEN);
             object1.put("mobile",edt_contact.getText().toString());
             object1.put("full_name",edt_fname.getText().toString()+" "+edt_lname.getText().toString());
             object1.put("email",edt_email.getText().toString());

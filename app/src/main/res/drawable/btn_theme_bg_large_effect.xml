@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- pressed -->
+    <item android:drawable="@drawable/btn_theme_bg_large_hover" android:state_enabled="true" android:state_pressed="true" />
+    <!-- focused -->
+    <item android:drawable="@drawable/btn_theme_bg_large_hover" android:state_enabled="true" android:state_focused="true" />
+    <!-- focused -->
+    <item android:drawable="@drawable/btn_theme_bg_large_disabled" android:state_enabled="false" />
+    <!-- default -->
+    <item android:drawable="@drawable/btn_theme_bg_large" android:state_enabled="true" />
+
+</selector>

@@ -71,7 +71,7 @@ public class ForgotPassword_Activity extends AppCompatActivity {
 
         try {
             JSONObject object1=new JSONObject();
-            object1.put("token","11");
+            object1.put("token",ConfigAPI.ACCESS_TOKEN);
             object1.put("mobile",edt_Contact.getText().toString());
             // object1.put("otp",otp);
 

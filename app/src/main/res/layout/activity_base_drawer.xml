@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created By BirenLadva in January,2021 -->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/navigation_main_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        app:itemTextAppearance="@color/purple_700">
+
+        <LinearLayout
+            android:id="@+id/ll_left_drawer_layout"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/toolbar"
+                        layout="@layout/header_menu" />
+
+                </LinearLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:scrollbars="none"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_main_navigation_layout"
+                        android:weightSum="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="0.1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white">
+
+                            <ScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fillViewport="true">
+
+                                <LinearLayout
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white">
+
+                                    <LinearLayout
+                                        android:id="@+id/ll_dashboard"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:background="@drawable/ripple_effect"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="15dp">
+
+                                        <ImageView
+                                            android:id="@+id/img_Dashboard"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_dashboard"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Dashboard"
+                                            android:paddingLeft="10dp"
+                                            android:textSize="16sp"
+                                            android:padding="5dp"
+                                            android:textColor="@color/black"
+                                            android:gravity="center|left"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_gravity="center" />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:visibility="gone"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="#30000000"/>
+
+                                    <LinearLayout
+                                        android:id="@+id/ll_Employee_Directory"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_marginRight="15dp"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_Employee_Directory"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_employee_directory"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Available Plan"
+                                            android:paddingLeft="10dp"
+                                            android:textSize="16dp"
+                                            android:padding="5dp"
+                                            android:gravity="center|left"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_gravity="center"
+                                            android:textColor="@color/black"/>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:visibility="visible"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.1dp"
+                                        android:background="#30000000"/>
+
+                                    <LinearLayout
+                                        android:layout_marginRight="15dp"
+                                        android:id="@+id/ll_time_keeping"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:background="@drawable/ripple_effect"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_time_keeping"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_time_keeping"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Recent Session"
+                                            android:paddingLeft="10dp"
+                                            android:textSize="16dip"
+                                            android:padding="5dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_gravity="center"
+                                            android:textColor="@color/black"/>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:visibility="gone"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="#30000000"/>
+
+                                    <LinearLayout
+                                        android:layout_marginRight="15dp"
+                                        android:id="@+id/ll_attendance_code"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:background="@drawable/ripple_effect"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_attendance_code"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_attendance_code"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Transcation History"
+                                            android:paddingLeft="10dp"
+                                            android:textSize="16dip"
+                                            android:padding="5dp"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_gravity="center"
+                                            android:textColor="@color/black"/>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:visibility="gone"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="#30000000"/>
+
+                                    <RelativeLayout
+                                        android:visibility="gone"
+                                        android:id="@+id/ll_hr_form"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:background="@drawable/ripple_effect"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_hr_form"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_hr_form"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@+id/img_hr_form"
+                                            android:padding="5dp"
+                                            android:paddingLeft="10dp"
+                                            android:text="HR Forms"
+                                            android:textColor="@color/black"
+                                            android:textSize="16dip" />
+
+                                        <ImageView
+                                            android:layout_marginRight="3dp"
+                                            android:id="@+id/img_hr_menu_down"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/ic_drawer_menu_down"/>
+
+                                    </RelativeLayout>
+
+                                    <View
+                                        android:visibility="gone"
+                                        android:id="@+id/view_hr_menu_detail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="#30000000"/>
+
+                                    <LinearLayout
+                                        android:visibility="gone"
+                                        android:id="@+id/ll_hr_menu_detail"
+                                        android:layout_marginLeft="7dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_marginRight="15dp"
+                                            android:id="@+id/ll_Leave_application"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:background="@drawable/ripple_effect">
+
+                                            <TextView
+                                                android:id="@+id/txt_leave_app"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="16dip"
+                                                android:textColor="#80000000"
+                                                android:text="Leave Application"
+                                                android:padding="11dp"
+                                                android:layout_marginLeft="45dp"
+                                                android:layout_gravity="center" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:visibility="gone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="#20000000"/>
+
+                                        <LinearLayout
+                                            android:layout_marginRight="15dp"
+                                            android:id="@+id/ll_early_late_app"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:background="@drawable/ripple_effect">
+
+                                            <TextView
+                                                android:id="@+id/txt_early_late_app"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="16dip"
+                                                android:textColor="#80000000"
+                                                android:text="Early/Late Application"
+                                                android:layout_gravity="center"
+                                                android:padding="11dp"
+                                                android:layout_marginLeft="45dp" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:visibility="gone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="#20000000"/>
+
+                                        <LinearLayout
+                                            android:layout_marginRight="15dp"
+                                            android:id="@+id/ll_Out_on_office_duty"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:background="@drawable/ripple_effect">
+
+                                            <TextView
+                                                android:id="@+id/txt_out_on_office_duty"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="16dp"
+                                                android:textColor="#80000000"
+                                                android:text="Out On Office Duty"
+                                                android:padding="11dp"
+                                                android:layout_marginLeft="45dp"
+                                                android:layout_gravity="center" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:visibility="gone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="#20000000"/>
+
+                                        <LinearLayout
+                                            android:layout_marginRight="15dp"
+                                            android:id="@+id/ll_personal_timeout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:background="@drawable/ripple_effect">
+
+                                            <TextView
+                                                android:id="@+id/txt_personal_timeout"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="16dp"
+                                                android:textColor="#80000000"
+                                                android:text="Personal TimeOut"
+                                                android:layout_gravity="center"
+                                                android:padding="11dp"
+                                                android:layout_marginLeft="45dp" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:visibility="gone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="#30000000"/>
+
+                                        <LinearLayout
+                                            android:layout_marginRight="15dp"
+                                            android:id="@+id/ll_Work_From_Home_application"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:background="@drawable/ripple_effect">
+
+                                            <TextView
+                                                android:id="@+id/txt_work_from_home_app"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textSize="16dip"
+                                                android:textColor="#80000000"
+                                                android:text="WFH Application"
+                                                android:padding="11dp"
+                                                android:layout_marginLeft="45dp"
+                                                android:layout_gravity="center" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:visibility="gone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="#20000000"/>
+
+                                    </LinearLayout>
+
+    <!--                                <LinearLayout-->
+    <!--                                    android:layout_marginRight="15dp"-->
+    <!--                                    android:id="@+id/ll_my_approvals"-->
+    <!--                                    android:padding="8dp"-->
+    <!--                                    android:weightSum="1"-->
+    <!--                                    android:clickable="true"-->
+    <!--                                    android:focusable="true"-->
+    <!--                                    android:background="@drawable/ripple_effect"-->
+    <!--                                    android:orientation="horizontal"-->
+    <!--                                    android:layout_width="match_parent"-->
+    <!--                                    android:layout_height="wrap_content">-->
+
+    <!--                                    <ImageView-->
+    <!--                                        android:id="@+id/img_my_approvals"-->
+    <!--                                        android:layout_width="30dp"-->
+    <!--                                        android:layout_height="30dp"-->
+    <!--                                        android:layout_marginLeft="15dp"-->
+    <!--                                        android:src="@drawable/ic_drawer_my_approvals"/>-->
+
+    <!--                                    <TextView-->
+    <!--                                        android:id="@+id/txt_my_approvals"-->
+    <!--                                        android:layout_width="match_parent"-->
+    <!--                                        android:layout_height="wrap_content"-->
+    <!--                                        android:text="My Approvals"-->
+    <!--                                        android:paddingLeft="10dp"-->
+    <!--                                        android:textSize="16dip"-->
+    <!--                                        android:padding="5dp"-->
+    <!--                                        android:layout_marginLeft="5dp"-->
+    <!--                                        android:layout_gravity="center"-->
+    <!--                                        android:textColor="@color/black"/>-->
+
+    <!--                                </LinearLayout>-->
+
+                                    <View
+                                        android:visibility="visible"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.1dp"
+                                        android:background="#20000000"/>
+
+                                    <LinearLayout
+                                        android:visibility="gone"
+                                        android:layout_marginRight="15dp"
+                                        android:id="@+id/ll_earnings"
+                                        android:padding="8dp"
+                                        android:weightSum="1"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:background="@drawable/ripple_effect"
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/img_earnings"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginLeft="15dp"
+                                            android:src="@drawable/ic_drawer_dashboard"/>
+
+                                        <TextView
+                                            android:id="@+id/txt_earnings"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Earnings"
+                                            android:paddingLeft="10dp"
+                                            android:textSize="16dip"
+                                            android:padding="5dp"
+                                            android:gravity="center|left"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_gravity="center"
+                                            android:textColor="@color/black"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </ScrollView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

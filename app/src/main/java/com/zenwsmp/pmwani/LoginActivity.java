@@ -171,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
 
         try {
             JSONObject object1=new JSONObject();
-            object1.put("token","11");
+            object1.put("token",ConfigAPI.ACCESS_TOKEN);
             object1.put("mobile",edt_Contact.getText().toString());
 
             object1.put("country_code",cpp.getSelectedCountryCodeWithPlus());
@@ -227,6 +227,9 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("auth_token",object.getString("auth_token"));
                         editor.putString("full_name",object.getString("full_name"));
                         editor.putString("email",object.getString("email"));
+                        editor.putString("mobile",edt_Contact.getText().toString());
+                        editor.putString("password",edt_username.getText().toString());
+                        editor.putString("cpp",cpp.getSelectedCountryCodeWithPlus());
                         editor.apply();
                         Intent i = new Intent(LoginActivity.this,DashboardActivity.class);
 

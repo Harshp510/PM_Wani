@@ -3,7 +3,9 @@ package com.zenwsmp.pmwani;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,11 +43,33 @@ public class Change_Password_Activity extends AppCompatActivity {
     boolean isforgot;
     String phone,cpp_code;
     LinearLayout layout_old_password;
+    String Str_cpp;
+    String Str_UserName;
+    String Str_email;
+    String Str_password;
+    String Str_fullname;
+    String Str_mobile;
+    SharedPreferences sp_userdetail;
+    ImageView ivActionBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
+        sp_userdetail = getSharedPreferences("userdetail.txt", Context.MODE_PRIVATE);
+
+        try {
+            //Str_Userid = sp_userdetail.getString("user_id", null);
+            Str_fullname = sp_userdetail.getString("full_name", null);
+            Str_email = sp_userdetail.getString("email", null);
+            Str_mobile = sp_userdetail.getString("mobile", null);
+            Str_cpp = sp_userdetail.getString("cpp", null);
+            Str_password = sp_userdetail.getString("password", null);
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         isregister = getIntent().getBooleanExtra("isregister",false);
         isforgot = getIntent().getBooleanExtra("isforgot",false);
         edt_old_password=findViewById(R.id.edt_old_password);
@@ -56,6 +81,7 @@ public class Change_Password_Activity extends AppCompatActivity {
         txt_oldpass_error=findViewById(R.id.txt_oldpass_error);
         txt_newpass_error=findViewById(R.id.txt_newpass_error);
         txt_confirmpass_error=findViewById(R.id.txt_confirmpass_error);
+        ivActionBack=findViewById(R.id.ivActionBack);
 
         txt_oldpass_error.setVisibility(View.GONE);
         txt_newpass_error.setVisibility(View.GONE);
@@ -75,37 +101,60 @@ public class Change_Password_Activity extends AppCompatActivity {
             layout_old_password.setVisibility(View.VISIBLE);
             txt_oldpass_error.setVisibility(View.GONE);
         }
+        ivActionBack.setOnClickListener(v -> onBackPressed());
         btn_submit_change_password=findViewById(R.id.btn_submit_change_password);
+
 
         btn_submit_change_password.setOnClickListener(v->
         {
 
-            if(validate())
-            {
-                if(edt_new_password.getText().toString().trim().equals(edt_confirm_password.getText().toString().trim()))
+            if(!isregister && !isforgot){
+                if(new connectionDector(this).isConnectingToInternet())
                 {
-                    if(new connectionDector(this).isConnectingToInternet())
+                    try {
+                        JSONObject object1=new JSONObject();
+                        object1.put("token",ConfigAPI.ACCESS_TOKEN);
+                        // object1.put("country_code",cpp_code);
+                        // object1.put("mobile",phone);
+                        object1.put("password",edt_confirm_password.getText().toString().trim());
+                        object1.put("old_password",edt_old_password.getText().toString().trim());
+                        Log.d("object1",""+object1.toString());
+                        Change_password_data_NEW(object1);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(this,"No Internet Connection");
+                }
+            }else{
+                if(validate())
+                {
+                    if(edt_new_password.getText().toString().trim().equals(edt_confirm_password.getText().toString().trim()))
                     {
-                        try {
-                            JSONObject object1=new JSONObject();
-                            object1.put("token",11);
-                            object1.put("country_code",cpp_code);
-                            object1.put("mobile",phone);
-                            object1.put("password",edt_confirm_password.getText().toString().trim());
-                            Log.d("object1",""+object1.toString());
-                            Change_password_data(object1);
-                        }catch (Exception e){
-                            e.printStackTrace();
+                        if(new connectionDector(this).isConnectingToInternet())
+                        {
+                            try {
+                                JSONObject object1=new JSONObject();
+                                object1.put("token",ConfigAPI.ACCESS_TOKEN);
+                                object1.put("country_code",cpp_code);
+                                object1.put("mobile",phone);
+                                object1.put("password",edt_confirm_password.getText().toString().trim());
+                                Log.d("object1",""+object1.toString());
+                                Change_password_data(object1);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+                        }else{
+                            new ConfigAPI().ShowToastMessage(this,"No Internet Connection");
                         }
-                    }else{
-                        new ConfigAPI().ShowToastMessage(this,"No Internet Connection");
+                    }
+                    else
+                    {
+                        new ConfigAPI().ShowToastMessage(this,"new password and confirm password does not match");
                     }
                 }
-                else
-                {
-                    new ConfigAPI().ShowToastMessage(this,"new password and confirm password does not match");
-                }
             }
+
 
 
 
@@ -200,6 +249,129 @@ public class Change_Password_Activity extends AppCompatActivity {
                         startActivity(i);
 
 
+                    }else
+                    {
+
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,responseMsg);
+                    }
+
+                    dialog.dismiss();
+                    dialog.cancel();
+
+                }
+                catch (Exception e)
+                {
+
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                dialog.dismiss();
+                dialog.cancel();
+                if(errorResponse!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,errorResponse.getString("message"));
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,"Something went wrong,Please try again later");
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+                dialog.dismiss();
+                dialog.cancel();
+                if(responseString!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,responseString);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,"Something went wrong,Please try again later");
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                dialog.dismiss();
+                dialog.cancel();
+                if(errorResponse!=null){
+                    try{
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,errorResponse.toString());
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }else{
+                    new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,"Something went wrong,Please try again later");
+                }
+            }
+        });
+
+
+    }
+    private void Change_password_data_NEW(JSONObject jsonObject) throws UnsupportedEncodingException {
+
+        Dialog dialog = new Dialog(Change_Password_Activity.this);
+        // Include dialog.xml file
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog);
+
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        // Set dialog title
+        // dialog.setTitle("Custom Dialog");
+        dialog.show();
+
+        RequestParams params = new RequestParams();
+        params.put("",jsonObject);
+        // StringEntity entity = new StringEntity(params.toString());
+        final ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
+        entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+        //  params.put("Password",jsonpassword);
+        final String url= ConfigAPI.MAIN_URL+"password/change";
+        Log.d("url",url);
+        client.addHeader(ConfigAPI.Authorization,ConfigAPI.Bearer+sp_userdetail.getString("auth_token",null));
+        client.setTimeout(20*1000);
+        client.setMaxRetriesAndTimeout(0,10*1000);
+        client.post(Change_Password_Activity.this,url,entity,"application/json",new JsonHttpResponseHandler()
+        {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.d("res",response.toString());
+
+                try {
+
+                    int responseCode=response.getInt("responseCode");
+                    String responseMsg=response.getString("message");
+
+                    if(responseCode==200){
+
+                        new ConfigAPI().ShowToastMessage(Change_Password_Activity.this,responseMsg);
+
+                      //  Intent i = new Intent(Change_Password_Activity.this,LoginActivity.class);
+                       // startActivity(i);
+
+                        SharedPreferences sp_detail=getSharedPreferences("userdetail.txt", MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sp_detail.edit();
+                       // editor.putString("auth_token",object.getString("auth_token"));
+                       // editor.putString("full_name",object.getString("full_name"));
+                       // editor.putString("email",object.getString("email"));
+                       // editor.putString("mobile",mobile);
+                        editor.putString("password",edt_confirm_password.getText().toString());
+                       // editor.putString("cpp",cpp);
+
+                        editor.apply();
                     }else
                     {
 

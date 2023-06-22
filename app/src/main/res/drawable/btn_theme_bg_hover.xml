@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetBottom="@dimen/button_inset_vertical_material"
+    android:insetLeft="@dimen/button_inset_horizontal_material"
+    android:insetRight="@dimen/button_inset_horizontal_material"
+    android:insetTop="@dimen/button_inset_vertical_material" >
+
+    <shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="rectangle" >
+        
+        <solid android:color="@color/button_bgColor_hover" />
+
+        <corners android:radius="@dimen/control_corner_material" />
+
+        <padding
+            android:bottom="@dimen/button_padding_vertical_material"
+            android:left="@dimen/button_padding_horizontal_material"
+            android:right="@dimen/button_padding_horizontal_material"
+            android:top="@dimen/button_padding_vertical_material" />
+    </shape>
+
+</inset>

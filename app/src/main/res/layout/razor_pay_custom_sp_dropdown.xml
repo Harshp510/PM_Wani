@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Suthar Rohit
+  ~ Developed by Suthar Rohit for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~ <a href="http://RohitSuthar.com/">Suthar Rohit</a>
+  ~
+  ~ @author Suthar Rohit
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardRadioLl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <RadioButton
+        android:id="@+id/radioDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tvItemText"
+        style="@style/editTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/roboto"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/purchase_ticket_edittext_textColor"
+        android:textSize="@dimen/purchase_ticket_edittext_textSize"
+        tools:text="item" />
+
+    <TextView
+        android:id="@+id/tvItemTextMonth"
+        style="@style/editTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/roboto"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/purchase_ticket_edittext_textColor"
+        android:textSize="@dimen/purchase_ticket_edittext_textSize"
+        tools:text="item" />
+</LinearLayout>
+
+<!--
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvItemText"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/roboto"
+        android:padding="5dp"
+        android:textColor="@color/purchase_ticket_edittext_textColor"
+        android:textSize="@dimen/purchase_ticket_edittext_textSize"
+        tools:text="item" />
+</RelativeLayout>-->

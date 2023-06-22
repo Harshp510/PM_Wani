@@ -9,7 +9,9 @@
     <color name="white">#FFFFFF</color>
     <color name="mainblack">#343434</color>
     <color name="maingreen">#0039a3</color>
+    <color name="maingreen_light">#990039a3</color>
     <color name="grey50">#ffcacaca</color>
+    <color name="default_fragment_bg_color">#fff2f2f2</color>
     <color name="event_pricing_date_chooser_stroke_color_other">#ffffff</color>
     <color name="event_pricing_date_chooser_textColor_normal">#333333</color>
     <color name="event_pricing_date_chooser_textColor_disabled">#FFFFFF</color>
@@ -23,7 +25,7 @@
     <color name="black_opaque_70">#b3000000</color>
     <color name="black_opaque_80">#cd000000</color>
     <color name="black_opaque_90">#e6000000</color>
-
+    <color name="gray">#ff999999</color>
     <color name="yellow">#FFBB00</color>
     <color name="error_message_color">#90ff4e4e</color>
     <color name="light_blue">#900039a3</color>
@@ -56,6 +58,132 @@
     <color name="success">#4CAF50</color>
     <!-- background -->
     <color name="background">#616161</color>
+    <color name="button_bgcolor">#EEEEEE</color>
+    <color name="button_bgcolor_press">#21566D</color>
+    <color name="button_bgcolor_enable">#3db5ea</color>
+    <color name="highlight">#FF21566D</color>
 
 
+
+    <color name="themeGray">#F2F2F2</color>
+    <color name="themeRed">@color/purple_500</color>
+    <color name="themeRedLight">#59F53033</color>
+    <color name="themeWhite">#FFFFFF</color>
+
+
+    <color name="colorPrimaryControlNormal">#CCCCCC</color>
+
+    <color name="profile_section_divider">#80787878</color>
+    <color name="button_bgColor_disabled">#979797</color>
+
+
+    <color name="button_textColor">@android:color/white</color>
+
+    <!-- PROFILE -->
+    <color name="profile_divider">#ECECEC</color>
+
+
+    <!-- DASHBOARD-->
+
+    <!-- EVENT LIST -->
+
+    <!-- EVENT DETAIL -->
+
+    <!-- EVENT PRICING -->
+
+
+    <!-- ORDER SUMMARY -->
+
+    <!-- BOOKING CONFIRMATION -->
+
+    <!-- PURCHASE TICKET -->
+
+
+
+
+    <color name="themeRedDark">@color/purple_700</color>
+    <color name="toolbarColor">@android:color/white</color>
+    <color name="colorPrimary">@color/themeRed</color>
+    <color name="colorPrimaryDark">@color/themeRedDark</color>
+    <color name="colorAccent">@color/themeRedLight</color>
+    <color name="colorAccentLight">#aeff7a7c</color>
+    <color name="button_bgColor">@color/themeRed</color>
+    <color name="button_bgColor_hover">@color/themeRedDark</color>
+
+    <color name="title_textColor">#484848</color>
+
+    <!-- PROFILE -->
+
+
+
+    <!-- DASHBOARD-->
+    <color name="bg_main">#ececec</color>
+
+    <color name="title">#4a4a4a</color>
+
+    <!-- EVENT LIST -->
+    <color name="event_list_item_title">#484848</color>
+    <color name="event_list_item_location">#737373</color>
+    <color name="event_list_item_date">#484848</color>
+    <color name="event_list_item_time">#484848</color>
+
+    <!-- EVENT DETAIL -->
+    <color name="event_detail_section_title_textColor">#484848</color>
+    <color name="event_detail_plan_label_textColor">@color/themeRed</color>
+    <color name="event_detail_organizer_label_textColor">#484848</color>
+    <color name="event_detail_timing_textColor">#4D4D4D</color>
+    <color name="event_detail_timing_background">#99ECECEC</color>
+    <color name="event_detail_artist_item_name_textColor">#333333</color>
+    <color name="event_detail_detail_textColor">#484848</color>
+    <color name="event_detail_terms_title_textColor">#4A4A4A</color>
+    <color name="event_detail_terms_background">#ECECEC</color>
+
+    <!-- EVENT PRICING -->
+    <color name="event_pricing_title_textColor">#323232</color>
+    <color name="event_pricing_address_textColor">#484848</color>
+    <color name="event_pricing_ticket_count_textColor_checked">#FFFFFF</color>
+    <color name="event_pricing_ticket_count_textColor_unchecked">#979797</color>
+    <color name="event_pricing_ticket_count_bg_checked">@color/themeRed</color>
+    <color name="event_pricing_ticket_count_bg_unchecked">#ECECEC</color>
+
+
+
+
+    <!-- ORDER SUMMARY -->
+    <color name="order_summary_category_item_name_textColor">#484848</color>
+    <color name="order_summary_category_item_price_textColor">#484848</color>
+    <color name="order_summary_category_item_seat_no_label_textColor">#919191</color>
+    <color name="order_summary_category_item_seat_no_textColor">@color/themeRed</color>
+
+    <!-- BOOKING CONFIRMATION -->
+    <color name="booking_table_label_textColor">#484848</color>
+    <color name="booking_table_value_textColor">@color/themeRed</color>
+
+    <!-- PURCHASE TICKET -->
+    <color name="tp_main_bg">#ECECEC</color>
+    <color name="tp_title_color">#484848</color>
+    <color name="purchase_ticket_edittext_textColor">#000000</color>
+    <color name="purchase_ticket_hint_textColor">#868686</color>
+    <color name="purchase_ticket_section_title_textColor">#4A4A4A</color>
+    <color name="tp_radio_color">#4A4A4A</color>
+    <color name="transparent">#00000000</color>
+
+    <!--View Tickets-->
+    <color name="m_ticket_label_gray_title_color">#444444</color>
+    <color name="m_ticket_label_red_title_color">#f23032</color>
+    <color name="m_ticket_sub_label_gray_color">#555555</color>
+
+    <!-- SELECT TICKET-->
+    <color name="even_title_color">#444</color>
+    <color name="subtitle">#606060</color>
+
+
+    <!-- SHARE TICKET -->
+    <color name="share_dialog_title_textColor">#444444</color>
+    <color name="share_dialog_item_textColor">#242424</color>
+
+    <color name="color_red_error">#f23032</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="coloGray">#494949</color>
 </resources>

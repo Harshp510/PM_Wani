@@ -160,7 +160,7 @@ public class OTP_Activity extends AppCompatActivity {
 
         try {
             JSONObject object1=new JSONObject();
-            object1.put("token","11");
+            object1.put("token",ConfigAPI.ACCESS_TOKEN);
             object1.put("mobile",phone);
             object1.put("otp",otp);
 
@@ -176,7 +176,7 @@ public class OTP_Activity extends AppCompatActivity {
 
         try {
             JSONObject object1=new JSONObject();
-            object1.put("token","11");
+            object1.put("token",ConfigAPI.ACCESS_TOKEN);
             object1.put("mobile",phone);
            // object1.put("otp",otp);
 

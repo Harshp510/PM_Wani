@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018. Kaushal Patel
+  ~ Developed by Kaushal Patel for NicheTech Computer Solutions Pvt. Ltd. use only.
+  ~
+  ~ @author Kaushal Patel
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/themeWhite"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="15dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="3dp">
+
+    <ImageView
+        android:id="@+id/ivLoader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/loader1" />
+</androidx.cardview.widget.CardView>

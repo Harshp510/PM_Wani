@@ -14,13 +14,17 @@ public class ConfigAPI {
     // contact us at http://help.microblink.com
     // public static final String LICENSE_KEY = "MSHLU4AX-CBMEPGOI-RN7IJWQZ-UEOLNT4Y-GD4K5X42-OJL66HTK-CYGA2P3E-O4CIHSF2";
     public static final String LICENSE_KEY = "75IYFNSG-ZYFURZAG-A6CX6OWR-IJ63EFRE-FDJK76ZO-GDF33L73-FYYMWHLM-RPBDJTOI";
-    public static  String MAIN_URL= "http://192.168.7.43:8080/api/v1/";
+    public static  String MAIN_URL= "http://192.168.2.184:8080/api/v1/";
     // public static final String MAIN_URL="https://developer.qntmnet.com/webservice/";
     public static final String Developer="de^el0per";
     public static final String flag_checkssid="SSIDCheck";
     public static final String flag_val_checkssid="0";
+  //  public static final String ACCESS_TOKEN="xi8kh19ux9tz1zsz2vp1q4vtyirc4rbme1ybr6km7kw0zngf9se5mwa7k3p8kp8e3ol8ddfqtsgnxa";
+    public static final String ACCESS_TOKEN="12";
+    public static final String Authorization="Authorization";
+    public static final String Bearer="Bearer ";
     //  flag=SSIDCheck&flag_val=0
-
+    private static final boolean is_paytmwallet = false;
     public void ShowToastMessage(Context context, String message)
     {
      /*   View toastLayout = LayoutInflater.from(context).inflate(R.layout.custome_toast, ((Activity) context).findViewById(R.id.custom_toast_layout));
@@ -45,5 +49,7 @@ public class ConfigAPI {
 
     }
 
-
+    public static boolean isIs_paytmwallet() {
+        return is_paytmwallet;
+    }
 }
