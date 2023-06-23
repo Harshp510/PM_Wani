@@ -106,6 +106,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation files('libs/android-async-http-1.4.9.jar')
     implementation files('libs/httpclient-4.4.1.1.jar')
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
 
     //paymentgateway
     implementation 'com.razorpay:customui:3.9.12' // add on 04/04/2023 //support UPI apps

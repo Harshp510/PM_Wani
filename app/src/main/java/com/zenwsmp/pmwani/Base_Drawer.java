@@ -33,6 +33,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.loopj.android.http.AsyncHttpClient;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class Base_Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -72,7 +73,7 @@ public class Base_Drawer extends AppCompatActivity implements NavigationView.OnN
     String EmployeeId,Employee_Name,image_url;
 
     private static AsyncHttpClient client;
-
+    MaterialSearchView sv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +117,7 @@ public class Base_Drawer extends AppCompatActivity implements NavigationView.OnN
         txt_username=findViewById(R.id.txt_username);
 //        ll_taxation=findViewById(R.id.ll_taxation);
 //        ll_loans=findViewById(R.id.ll_loans);
+        sv = findViewById(R.id.sv);
 
         img_hr_menu_down = findViewById(R.id.img_hr_menu_down);
         img_Dashboard = findViewById(R.id.img_Dashboard);
@@ -972,13 +974,14 @@ public class Base_Drawer extends AppCompatActivity implements NavigationView.OnN
         } else {
             if (backPressedToExitOnce) {
                 moveTaskToBack(false);
-
+                if(sv.isSearchOpen()) sv.closeSearch();
                 Intent startMain = new Intent(Intent.ACTION_MAIN);
                 startMain.addCategory(Intent.CATEGORY_HOME);
                 startMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(startMain);
             } else {
+                if(sv.isSearchOpen()) sv.closeSearch();
                 this.backPressedToExitOnce = true;
                 Toast.makeText(Base_Drawer.this, "Press again to exit", Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {

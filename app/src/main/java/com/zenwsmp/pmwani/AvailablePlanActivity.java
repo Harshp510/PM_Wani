@@ -15,11 +15,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.zenwsmp.pmwani.activity.RazorPayOrderPlaceActivity;
 import com.zenwsmp.pmwani.adapter.PlanAdapter;
 import com.zenwsmp.pmwani.common.Constant;
@@ -38,7 +40,7 @@ import cz.msebera.android.httpclient.entity.ByteArrayEntity;
 import cz.msebera.android.httpclient.message.BasicHeader;
 import cz.msebera.android.httpclient.protocol.HTTP;
 
-public class AvailablePlanActivity extends Base_Drawer {
+public class AvailablePlanActivity extends Base_Drawer implements MaterialSearchView.OnQueryTextListener {
 
     private static AsyncHttpClient client = new AsyncHttpClient();
     SharedPreferences sp_userdetail;
@@ -59,7 +61,7 @@ public class AvailablePlanActivity extends Base_Drawer {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_available_plan);
         View rootView = getLayoutInflater().inflate(R.layout.activity_available_plan, frameLayout);
-        search_icon.setVisibility(View.GONE);
+        search_icon.setVisibility(View.VISIBLE);
         txt_menuTitle.setText("Available Plan");
         sp_userdetail = getSharedPreferences("userdetail.txt", Context.MODE_PRIVATE);
         eventSessionData = new TicketSessionData();
@@ -75,6 +77,7 @@ public class AvailablePlanActivity extends Base_Drawer {
         {
             e.printStackTrace();
         }
+        sv.setOnQueryTextListener(this);
         connected_client_txt_norecord=findViewById(R.id.connected_client_txt_norecord);
         refreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_to_refresh);
         refreshLayout.setColorSchemeColors(getResources().getColor(R.color.maingreen));
@@ -97,6 +100,12 @@ public class AvailablePlanActivity extends Base_Drawer {
                 new ConfigAPI().ShowToastMessage(AvailablePlanActivity.this,"No Internet Connection");
             }
 
+        });
+        search_icon.setOnClickListener(v -> {
+            sv.showSearch(true);
+           // dialog.dismiss();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         });
     }
 
@@ -274,4 +283,34 @@ public class AvailablePlanActivity extends Base_Drawer {
 
 
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+
+        List<PlanBean> tempArrayList = new ArrayList<>();
+       // ArrayList<DeviceDetailBean> tempdeviceDetailBeanArrayList = new ArrayList<>();
+        int textlength = s.length();
+        System.out.println(textlength);
+        tempArrayList.clear();
+        for (PlanBean c : list) {
+            if ((textlength <= c.getPlan_name().length()) ) {
+                if ((c.getPlan_name().toLowerCase().contains(s.toLowerCase()))) {
+
+                    tempArrayList.add(c);
+                }
+            }
+
+        }
+        adapter = new PlanAdapter(tempArrayList,AvailablePlanActivity.this);
+        recycler_view.setAdapter(adapter);
+
+        return true;
+    }
+
+
 }

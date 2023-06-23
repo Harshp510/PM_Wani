@@ -10,10 +10,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.zenwsmp.pmwani.adapter.PlanAdapter;
 import com.zenwsmp.pmwani.adapter.SessionAdapter;
 import com.zenwsmp.pmwani.model.PlanBean;
@@ -28,7 +30,7 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class SessionListActivity extends Base_Drawer {
+public class SessionListActivity extends Base_Drawer implements MaterialSearchView.OnQueryTextListener {
     private static AsyncHttpClient client = new AsyncHttpClient();
     SharedPreferences sp_userdetail;
     String Str_cpp;
@@ -47,7 +49,7 @@ public class SessionListActivity extends Base_Drawer {
         super.onCreate(savedInstanceState);
       //  setContentView(R.layout.activity_session_list);
         View rootView = getLayoutInflater().inflate(R.layout.activity_session_list, frameLayout);
-        search_icon.setVisibility(View.GONE);
+        search_icon.setVisibility(View.VISIBLE);
         txt_menuTitle.setText("Recent Sessions");
         sp_userdetail = getSharedPreferences("userdetail.txt", Context.MODE_PRIVATE);
 
@@ -63,6 +65,7 @@ public class SessionListActivity extends Base_Drawer {
         {
             e.printStackTrace();
         }
+        sv.setOnQueryTextListener(this);
         connected_client_txt_norecord=findViewById(R.id.connected_client_txt_norecord);
         refreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_to_refresh);
         refreshLayout.setColorSchemeColors(getResources().getColor(R.color.maingreen));
@@ -85,6 +88,12 @@ public class SessionListActivity extends Base_Drawer {
                 new ConfigAPI().ShowToastMessage(SessionListActivity.this,"No Internet Connection");
             }
 
+        });
+        search_icon.setOnClickListener(v -> {
+            sv.showSearch(true);
+            // dialog.dismiss();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         });
     }
     @Override
@@ -252,5 +261,33 @@ public class SessionListActivity extends Base_Drawer {
         });
 
 
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+
+        List<SessionBean> tempArrayList = new ArrayList<>();
+        // ArrayList<DeviceDetailBean> tempdeviceDetailBeanArrayList = new ArrayList<>();
+        int textlength = s.length();
+        System.out.println(textlength);
+        tempArrayList.clear();
+        for (SessionBean c : list) {
+            if ((textlength <= c.getIpaddress().length()) || (textlength <= c.getMac().length())) {
+                if ((c.getIpaddress().toLowerCase().contains(s.toLowerCase())) || (c.getMac().toLowerCase().contains(s.toLowerCase()))) {
+
+                    tempArrayList.add(c);
+                }
+            }
+
+        }
+        adapter = new SessionAdapter(tempArrayList,SessionListActivity.this);
+        recycler_view.setAdapter(adapter);
+
+        return true;
     }
 }
